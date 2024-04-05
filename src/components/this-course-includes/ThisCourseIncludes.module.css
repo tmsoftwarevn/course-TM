@@ -1,6 +1,9 @@
 .header {
-    font-weight: 700;
-    font-size: 25px;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 30px;
+    text-transform: uppercase;
+    color: #2d3436;
 }
 
 .black {
@@ -8,7 +11,7 @@
 }
 
 .listItem {
-    padding: 0 0 0 1rem;
+    /* padding: 0 0 0 1rem; */
 }
 
 .itemText {

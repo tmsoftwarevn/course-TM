@@ -21,6 +21,7 @@
 
 .accordionDetails {
 	border-top: 1px solid #d1d7dc;
+	cursor: pointer;
 }
 
 .lecture {
@@ -31,11 +32,14 @@
 .lectureTitle {
 	padding-left: 1rem;
 	flex-grow: 1;
+	cursor: pointer;
+}
+
+.lectureTitle:hover{
+	color: #3b82f6;
 }
 
 .previewedLecture {
-	text-decoration: underline;
-	color: #5624d0;
 	cursor: pointer;
 	flex-grow: 1;
 	padding-left: 1rem;
@@ -45,11 +49,11 @@
 	padding: 0 0.5rem;
 	text-decoration: underline;
 	cursor: pointer;
-	color: #5624d0;
+	color: #3b82f6;
 }
 
 .preview:hover {
-	color: #4c27aa;
+	color: #1168f4;
 }
 
 .preview,

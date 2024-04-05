@@ -40,4 +40,5 @@ function SingleCoursePage() {
 	);
 }
 
+
 export default SingleCoursePage;

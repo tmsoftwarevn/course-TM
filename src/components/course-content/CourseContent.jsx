@@ -1,77 +1,177 @@
-import React, { useState } from 'react';
-import styles from './CourseContent.module.css';
-import CourseSection from '../course-section/CourseSection';
-import { List, ListItem } from '@mui/material';
+import React, { useState } from "react";
+import styles from "./CourseContent.module.css";
+import CourseSection from "../course-section/CourseSection";
+import { List, ListItem } from "@mui/material";
 
-function CourseContent({ details }) {
-	const [open, toggleOpen] = useState(false);
-	const { curriculum_context: content } = details;
-	const {
-		sections,
-		num_of_published_lectures: numOfLectures,
-		estimated_content_length_in_seconds: timeInSeconds,
-	} = content['data'];
+const khoa_hoc = {
+  sections: [
+    {
+      index: 1,
+      items: [
+        {
+          id: 2239858,
+          title: "Giới thiệu khóa học Chiến thắng những Đòn tâm lý",
+          item_type: "lecture",
+          learn_url: "/course/pythonforbeginners/learn/lecture/2239858",
+          icon_class: "udi udi-play-circle",
+          description: "",
+          preview_url: "/course/394676/preview/?startPreviewId=3862852",
+          object_index: 1,
+          video_asset_id: 3862852,
+          content_summary: "04:07",
+          can_be_previewed: true,
+          landing_page_url: null,
+          is_coding_exercise: false,
+          has_linked_workspace: false,
+        },
+        {
+          id: 2239862,
+          title: "Vạch trần 07 sự thật về ngành bán hàng",
+          item_type: "lecture",
+          learn_url: "/course/pythonforbeginners/learn/lecture/2239862",
+          icon_class: "udi udi-play-circle",
+          description: "",
+          preview_url: "/course/394676/preview/?startPreviewId=3862806",
+          object_index: 2,
+          video_asset_id: 3862806,
+          content_summary: "01:37",
+          can_be_previewed: false,
+          landing_page_url: null,
+          is_coding_exercise: false,
+          has_linked_workspace: false,
+        },
+      ],
+      title: "Giới thiệu series tổng & khoá học",
+      lecture_count: 2,
+      content_length: 344,
+      content_length_text: "05:44",
+    },
+    {
+      index: 2,
+      items: [
+        {
+          id: 2239858,
+          title: "Nắm vững 07 hoạt động trọng yếu trong bán hàng",
+          item_type: "lecture",
+          learn_url: "/course/pythonforbeginners/learn/lecture/2239858",
+          icon_class: "udi udi-play-circle",
+          description: "",
+          preview_url: "/course/394676/preview/?startPreviewId=3862852",
+          object_index: 1,
+          video_asset_id: 3862852,
+          content_summary: "04:07",
+          can_be_previewed: true,
+          landing_page_url: null,
+          is_coding_exercise: false,
+          has_linked_workspace: false,
+        },
+        {
+          id: 2239862,
+          title: "Thông thạo 04 bước tạo nên thành công",
+          item_type: "lecture",
+          learn_url: "/course/pythonforbeginners/learn/lecture/2239862",
+          icon_class: "udi udi-play-circle",
+          description: "",
+          preview_url: "/course/394676/preview/?startPreviewId=3862806",
+          object_index: 2,
+          video_asset_id: 3862806,
+          content_summary: "01:37",
+          can_be_previewed: false,
+          landing_page_url: null,
+          is_coding_exercise: false,
+          has_linked_workspace: false,
+        },
+        {
+          id: 2239862,
+          title: "Thấu hiểu 03 tác động của Lòng tự tôn",
+          item_type: "lecture",
+          learn_url: "/course/pythonforbeginners/learn/lecture/2239862",
+          icon_class: "udi udi-play-circle",
+          description: "",
+          preview_url: "/course/394676/preview/?startPreviewId=3862806",
+          object_index: 2,
+          video_asset_id: 3862806,
+          content_summary: "01:37",
+          can_be_previewed: false,
+          landing_page_url: null,
+          is_coding_exercise: false,
+          has_linked_workspace: false,
+        },
+      ],
+      title: "Nắm vững 07 hoạt động trọng yếu trong bán hàng",
+      lecture_count: 3,
+      content_length: 344,
+      content_length_text: "05:44",
+    },
+  ],
+  title: "Khóa học Marketing cho người bắt đầu",
+  total_sections: 10,
+  total_lecture: 30,
+  total_time: "10h30p20s",
+};
 
-	const timeInHours = parseInt(timeInSeconds / 60 / 60);
-	const remainingMinutes = Math.round(
-		(timeInSeconds - timeInHours * 60 * 60) / 60
-	);
-	const [clicked, toggleClicked] = useState(false);
+function CourseContent({ details, setLink, setShowVideo }) {
+  const [open, toggleOpen] = useState(false);
 
-	const handleClick = () => {
-		toggleClicked(true);
-		toggleOpen(!open);
-	};
+  //console.log("detail: ", details);
 
-	return (
-		<div className={styles.contentContainer}>
-			<p className={styles.header}>Course content</p>
-			<section className={styles.beforeContent}>
-				<p>
-					{sections.length} sections . {numOfLectures} lectures .{' '}
-					{timeInHours}h {remainingMinutes}m total length
-				</p>
-				<button
-					type='button'
-					onClick={handleClick}
-					className={styles.expandAllButton}
-				>
-					{open ? 'Collapse' : 'Expand'} all sections
-				</button>
-			</section>
-			<List>
-				{sections.map((section, idx) => {
-					const sectionComponent = (
-						<CourseSection
-							ExpandAll={open}
-							sectionDetails={section}
-							idx={idx}
-						/>
-					);
-					return !clicked && idx > 9 ? null : (
-						<ListItem
-							key={idx}
-							disablePadding
-							className={styles.listItem}
-						>
-							{sectionComponent}
-						</ListItem>
-					);
-				})}
-			</List>
-			{sections.length > 10 ? (
-				<button
-					className={clicked ? styles.hide : styles.showMoreButton}
-					type='button'
-					onClick={() => toggleClicked(true)}
-				>
-					{sections.length - 10} more sections
-				</button>
-			) : (
-				<span></span>
-			)}
-		</div>
-	);
+  const [clicked, toggleClicked] = useState(false);
+
+  const handleClick = () => {
+    toggleClicked(true);
+    toggleOpen(!open);
+  };
+
+  return (
+    <div className={styles.contentContainer}>
+      <p className={styles.header}>Nội dung khóa học</p>
+      <section className={styles.beforeContent}>
+        <p style={{ visibility: "hidden" }}>
+          {khoa_hoc.total_sections} bài học . {khoa_hoc.total_lecture} bài giảng
+          . tổng {khoa_hoc.total_time}
+        </p>
+        <button
+          type="button"
+          onClick={handleClick}
+          className={styles.expandAllButton}
+        >
+          {open ? "Thu hẹp" : "Mở rộng"}
+        </button>
+      </section>
+      {/* lặp từng bài học, lấy tất cả bài giảng của bài học */}
+      <List>
+        {khoa_hoc.sections.map((section, idx) => {
+          const sectionComponent = (
+            <CourseSection
+              ExpandAll={open}
+              sectionDetails={section}
+              idx={idx}
+              setShowVideo={setShowVideo} // truyền sự kiện click show video
+              setLink={setLink}
+            />
+          );
+          return !clicked && idx > 9 ? null : (
+            <ListItem key={idx} disablePadding className={styles.listItem}>
+              {sectionComponent}
+            </ListItem>
+          );
+        })}
+      </List>
+
+      {/* check so bai tieu đề > 10 */}
+      {khoa_hoc.sections.length > 10 ? (
+        <button
+          className={clicked ? styles.hide : styles.showMoreButton}
+          type="button"
+          onClick={() => toggleClicked(true)}
+        >
+          {khoa_hoc.sections.length - 10} more sections
+        </button>
+      ) : (
+        <span></span>
+      )}
+    </div>
+  );
 }
 
 export default CourseContent;

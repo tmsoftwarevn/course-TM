@@ -3,6 +3,7 @@ import LinksList from '../links-list/LinksList';
 import links from './links';
 import styles from './Footer.module.css';
 import { Link } from 'react-router-dom';
+import logo from "../../asset/logo.png";
 
 function Footer() {
 	return (
@@ -29,7 +30,7 @@ function Footer() {
 				<div className={styles.logoCopyRights}>
 					<Link to='/Udemy-Clone-ReactJS/'>
 						<img
-							src={require('../../materials/logo-udemy.png')}
+							src={logo}
 							alt='logo'
 							style={{ width: '100px', height: '100px' }}
 						/>

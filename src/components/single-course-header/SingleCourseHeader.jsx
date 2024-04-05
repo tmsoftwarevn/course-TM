@@ -1,156 +1,72 @@
-import React from 'react';
-import styles from './SingleCourseHeader.module.css';
-import './iconStyle.css';
-import { Link } from 'react-router-dom';
-import StarsRating from '../stars-rating/StarsRating';
-import Sticky from 'react-stickynode';
-import StickyCardContent from '../sticky-card-content/StickyCardContent';
+import React from "react";
+import styles from "./SingleCourseHeader.module.css";
+import "./iconStyle.css";
+import { Link } from "react-router-dom";
+import StarsRating from "../stars-rating/StarsRating";
+import Sticky from "react-stickynode";
+import StickyCardContent from "../sticky-card-content/StickyCardContent";
+import img_khoahoc from "../../asset/1700297631-social-media-marketing.jpg";
 
 function SingleCourseHeader({ courseDetails, additionalDetails }) {
-	const {
-		title,
-		image_750x422: image,
-		headline,
-		rating,
-		num_subscribers: subscribers,
-		visible_instructors: instructors,
-		last_update_date: lastUpdate,
-		caption_languages: languages,
-	} = courseDetails;
+  const {
+    title,
+    image_750x422: image,
+    headline,
+    rating,
+    num_subscribers: subscribers,
+    visible_instructors: instructors,
+    last_update_date: lastUpdate,
+    caption_languages: languages,
+  } = courseDetails;
 
-	const [year, month] = lastUpdate.split('-');
-	const date = new Date(year, month - 1);
+  const [year, month] = lastUpdate.split("-");
+  const date = new Date(year, month - 1);
 
-	return (
-		<>
-			<main className={styles.mainContainer}>
-				<div className={styles.body}>
-					<section className={styles.categoriesSection}>
-						<Link to='/ahmedGamal-Project2React/'>
-							<p className={styles.subCategory}>Home</p>
-						</Link>
-						<i className='fa-solid fa-chevron-right sub-category-arrow'></i>
-						<Link to='/ahmedGamal-Project2React#courses'>
-							<p className={styles.subCategory}>courses</p>
-						</Link>
-					</section>
-					<section className={styles.coursePreview}>
-						<figure
-							className={[styles.imageWrapper, styles.hide].join(
-								' '
-							)}
-						>
-							<img
-								src={image}
-								alt={courseDetails.category}
-							/>
-						</figure>
-						<section className={styles.mainDetails}>
-							<h1 className={styles.title}>{title}</h1>
-							<p>{headline}</p>
-							<p className={styles.rating}>
-								{rating.toPrecision(2)}
-							</p>
+  return (
+    <>
+      <main className="mx-auto max-w-7xl bg-blue-600">
+        <div className={styles.body}>
+          <section className={styles.categoriesSection}>
+            <Link to="/">
+              <p className={styles.subCategory}>Trang chủ</p>
+            </Link>
+            <i className="fa-solid fa-chevron-right sub-category-arrow"></i>
+            <Link to="/ahmedGamal-Project2React#courses">
+              <p className={styles.subCategory}>Khóa học</p>
+            </Link>
+          </section>
+          <section className={styles.coursePreview}>
+            <figure className={[styles.imageWrapper, styles.hide].join(" ")}>
+              {/* <img src={img_khoahoc} alt="anh" /> */}
+            </figure>
+            <section className={styles.mainDetails}>
+              <h1 className={styles.title}>Chinh Phục Sản Xuất Video Ngắn</h1>
+              <p className="mt-3 font-medium text-lg">
+                Giúp bạn biến ý tưởng thành những video ấn tượng để xây dựng
+                thương hiệu cá nhân, bán hàng và bắt kịp xu hướng viral trên
+                mạng xã hội.
+              </p>
 
-							<StarsRating rating={rating} />
-							<p className={styles.linkLikeText}>
-								(2,305 ratings)
-							</p>
-							<p
-								style={{
-									display: 'inline-block',
-									marginLeft: '7px',
-								}}
-							>
-								{subscribers} students
-							</p>
-							<p>
-								Created by{' '}
-								<span className={styles.linkLikeText}>
-									{instructors
-										.map((instructor) => instructor.name)
-										.join(', ')}
-								</span>
-							</p>
-							<div className={styles.lastUpdateLangWrapper}>
-								<p>
-									<i className='fa-solid fa-circle-exclamation'></i>
-									<span className={styles.lastUpdate}>
-										Last updated
-										<span className={styles.lastUpdateDate}>
-											{date.getMonth() + 1}/
-											{date.getFullYear()}
-										</span>
-									</span>
-								</p>
-								<p>
-									<i className='fa-solid fa-globe'></i>{' '}
-									English
-								</p>
-								<p>
-									<i className='fa-solid fa-closed-captioning'></i>
-									<span className={styles.languages}>
-										{languages.join(', ')}
-									</span>
-								</p>
-							</div>
-							<div className={styles.hide}>
-								<section className={styles.priceAndOffer}>
-									<p className={styles.headerPrice}>
-										<span className={styles.bigPrice}>
-											E£199.99
-										</span>
-										<span className={styles.smallPrice}>
-											E£679.99
-										</span>
-										<span className={styles.offerSize}>
-											71% off
-										</span>
-									</p>
-									<p className={styles.timeRemaining}>
-										<i className='fa-regular fa-clock'></i>
-										<span className={styles.offerText}>
-											<span className={styles.bold}>
-												5 hours
-											</span>{' '}
-											left at this price!
-										</span>
-									</p>
-								</section>
-								<footer className={styles.previewFooter}>
-									<button
-										type='button'
-										className={styles.addToCartButton}
-									>
-										Add to cart
-									</button>
-									<p className='text-center p-3 pb-0'>
-										30-Day Money-Back Guarantee
-									</p>
-									<p className='text-center'>
-										Full Lifetime Access
-									</p>
-									<div
-										className={styles.previewFooterButtons}
-									>
-										<button className={styles.footerButton}>
-											Share
-										</button>
-										<button className={styles.footerButton}>
-											Gift this course
-										</button>
-										<button className={styles.footerButton}>
-											Apply Coupon
-										</button>
-									</div>
-								</footer>
-							</div>
-						</section>
-					</section>
-				</div>
-			</main>
-		</>
-	);
+              <div className="g-parent flex items-center gap-5 mt-3">
+                <div className="g-icon flex items-center">
+                  <span className="fa-regular fa-clock"></span>
+                  <p className="ml-1">10 giờ 25 phút</p>
+                </div>
+                <div className="g-icon flex items-center">
+                  <span className="fa-solid fa-circle-play"></span>
+                  <p className="ml-1">15 bài học</p>
+                </div>
+                <div className="g-icon sm:flex items-center hidden">
+                  <i class="fa-solid fa-tag"></i>
+                  <p className="ml-1">Mọi trình độ</p>
+                </div>
+              </div>
+            </section>
+          </section>
+        </div>
+      </main>
+    </>
+  );
 }
 
 export default SingleCourseHeader;

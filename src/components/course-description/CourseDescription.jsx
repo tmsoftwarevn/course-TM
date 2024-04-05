@@ -4,7 +4,7 @@ import FadedText from '../faded-text/FadedText';
 
 function CourseDescription({ details }) {
 	return (
-		<div className={styles.mainContainer}>
+		<div className="col-md-8">
 			<p className={styles.header}>Description</p>
 			<FadedText rawHTML={details['description']} />
 		</div>

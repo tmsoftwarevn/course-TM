@@ -1,17 +1,17 @@
-.mainContainer {
-    display: none;
-    margin-left: 65rem;
-    width: 20rem;
-    background-color: #fff;
-}
-
 .cardBody {
-    padding: 0.5rem;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 4;
 }
 
 .price {
+    display: inline-block;
     font-weight: 700;
     font-size: 2rem;
+    margin-bottom: 10px;
+    margin-right: 1rem;
+    color: orange;
 }
 
 .button,
@@ -20,29 +20,6 @@
     width: 100%;
     margin: 0.5rem auto;
     height: 3rem;
-}
-
-.addToCartButton {
-    border: none;
-    color: #fff;
-    background-color: #a435f0;
-    font-weight: bold;
-}
-
-.addToCartButton:hover {
-    background-color: #832fbb;
-}
-
-.buyNowButton,
-.tryUdemyBusinessButton {
-    border: 1px solid black;
-    font-weight: bold;
-    background-color: #fff;
-}
-
-.buyNowButton:hover,
-.tryUdemyBusinessButton:hover {
-    background-color: whitesmoke;
 }
 
 .buttonsWrapper {
@@ -79,8 +56,8 @@
     display: none;
 }
 
-@media only screen and (min-width: 1080px){
-    .mainContainer{
+@media only screen and (min-width: 1080px) {
+    .mainContainer {
         display: initial;
     }
 }
