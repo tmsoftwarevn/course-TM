@@ -47,8 +47,7 @@ function CourseDetailsPage({ courseDetails }) {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  console.log("ttttt", isShowVideo);
-
+ 
   return fetched ? (
     <main className="mx-auto max-w-7xl relative">
       <section>
@@ -98,14 +97,15 @@ function CourseDetailsPage({ courseDetails }) {
           {/* <div id="boundary">
             <ReviewsSection details={additionalDetails} />
           </div> */}
-          
+
         </div>
         <BuyCourseNavBar details={courseDetails} />
+        
       </section>
 
       {isShowVideo && (
         <div className="show-video">
-          <div className="blur"></div>
+          <div className="blur-video"></div>
 
           <div className="video-yt" ref={refOutside}>
             <ReactPlayer

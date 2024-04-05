@@ -19,10 +19,14 @@
 }
 
 .instructorImage {
-	margin: 0;
-	overflow: hidden;
-	border-radius: 100%;
-	cursor: pointer;
+	
+}
+
+.instructorImage img{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	object-fit: cover; 
 }
 
 .profileElement {
