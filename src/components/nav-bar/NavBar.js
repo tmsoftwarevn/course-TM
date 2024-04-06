@@ -13,10 +13,10 @@ function NavBar() {
   };
   return (
     <>
-      <header className="bg-white fixed top-0 left-0 w-full z-50 shadow">
+      <header className="bg-white sticky top-0 left-0 w-full z-50 shadow">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="left flex align-items-center">
+          <div className="flex items-center justify-between h-16 w-full">
+            <div className="left flex align-items-center col-md-9">
               <div className="flex-shrink-0 logo" onClick={() => navigate("/")}>
                 <img src={logo}></img>
               </div>
@@ -24,12 +24,14 @@ function NavBar() {
                 <a
                   href="#"
                   className="text-black-100 font-medium hover:text-blue-500 px-3 py-2 "
+                  onClick={() => navigate("/khoa-hoc/394676")}
                 >
                   Khóa học
                 </a>
                 <a
                   href="#"
                   className="text-black-100 font-medium hover:text-blue-500 px-3 py-2"
+                  onClick={() => navigate("/blog")}
                 >
                   Blog
                 </a>
@@ -41,12 +43,12 @@ function NavBar() {
                 </a>
               </nav>
 
-              <div className="ml-20 hidden lg:flex">
+              <div className="hidden ml-10 lg:flex w-5/12 ">
                 <SearchBar />
               </div>
             </div>
 
-            <div className="right hidden lg:flex space-x-4">
+            <div className="right hidden lg:flex space-x-4 col-md-3">
               <div
                 className="text-white px-3 py-2 rounded bg-blue-500 hover:bg-blue-600 cursor-pointer"
                 onClick={() => navigate("/login")}
@@ -60,6 +62,7 @@ function NavBar() {
                 Đăng ký
               </div>
             </div>
+
             {/* // btn toggle */}
             <div className="lg:hidden">
               <button
@@ -118,10 +121,16 @@ function NavBar() {
               <SearchBar />
             </div>
             <div className="flex space-x-4 px-4 py-3">
-              <div className="text-blue-500 px-3 py-2 rounded bg-white cursor-pointer">
+              <div
+                className="text-blue-500 px-3 py-2 rounded bg-white cursor-pointer"
+                onClick={() => navigate("/login")}
+              >
                 Đăng nhập
               </div>
-              <div className="text-blue-500 px-3 py-2 rounded bg-white cursor-pointer">
+              <div
+                className="text-blue-500 px-3 py-2 rounded bg-white cursor-pointer"
+                onClick={() => navigate("/dang-ky")}
+              >
                 Đăng ký
               </div>
             </div>

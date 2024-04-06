@@ -1,0 +1,72 @@
+.cardBody {
+    padding: 1rem;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 4px;
+}
+
+.price {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    margin-right: 1rem;
+    color: orange;
+}
+
+.button,
+.footerButton {
+    display: block;
+    width: 100%;
+    margin: 0.5rem auto;
+    height: 3rem;
+}
+
+
+.g-image {
+    position: relative;
+    
+    svg {
+        cursor: pointer;
+        z-index: 999;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+    }
+
+    .glightbox_video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+    }
+
+    .outer_circle {
+        stroke-width: 3;
+        stroke-dasharray: 410;
+        stroke-dashoffset: 0;
+        stroke-linecap: square;
+        transition: all 0.4s ease-out;
+    }
+
+    .glightbox_video:hover .outer_circle {
+        stroke-dashoffset: 410;
+        transition:
+            stroke 0.7s 0.4s ease-out,
+            stroke-dashoffset 0.4s ease-out;
+    }
+
+    .glightbox_video:hover .inner-circle {
+        fill: orange;
+        transition: fill 0.4s 0.3s ease-out;
+    }
+
+    .glightbox_video:hover .play {
+        fill: white;
+        transition: fill 0.4s 0.3s ease-out;
+    }
+}

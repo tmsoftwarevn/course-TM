@@ -1,10 +1,15 @@
 import React, { useState } from "react";
-import styles from "./StickyCardContent.module.scss";
+import "./StickyCardContent.scss";
 import ThisCourseIncludes from "../this-course-includes/ThisCourseIncludes";
 import { useEffect } from "react";
-import img_test from "../../asset/1700297631-social-media-marketing.jpg";
+import img_test from "../../asset/8aNM4sL6S0infZfko3G2_Thực hành UI_UX.jpg";
 
-function StickyCardContent({ details, additionalDetails }) {
+function StickyCardContent({
+  details,
+  additionalDetails,
+  setLink,
+  setShowVideo,
+}) {
   const { image_750x422: image } = details;
 
   const [hidden, toggleHidden] = useState(false);
@@ -21,18 +26,51 @@ function StickyCardContent({ details, additionalDetails }) {
     window.addEventListener("scroll", handleStyles);
   }, []);
 
+  const handleSetVideo = (open, link) => {
+    setShowVideo(open);
+  };
+  
   return (
     <main>
-      <figure className={styles.imageWrapper}>
+      <div className="g-image">
         <img className="w-full" src={img_test} alt="" />
-      </figure>
-      <div className={styles.cardBody}>
-        <span className={styles.price}>9.987.654 đ</span>
-        <span className="line-through">12.000.000 đ</span>
-        <button
-          //className={[styles.buyNowButton, styles.button].join(" ")}
-          className="w-full bg-blue-500 hover:bg-blue-600 p-2.5 sm:p-3 rounded text-white"
+        {/* btn */}
+        <div
+          className="glightbox_video"
+          onClick={() => handleSetVideo(true, "")}
         >
+          <svg
+            viewBox="0 0 131 131"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              className="inner-circle"
+              d="M65 21C40.1488 21 20 41.1488 20 66C20 90.8512 40.1488 111 65 111C89.8512 111 110 90.8512 110 66C110 41.1488 89.8512 21 65 21Z"
+              fill="white"
+            ></path>
+            <circle
+              className="outer_circle"
+              cx="65.5"
+              cy="65.5"
+              r="64"
+              stroke="white"
+            ></circle>
+            <path
+              className="play"
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M60 76V57L77 66.7774L60 76Z"
+              fill="orange"
+            ></path>
+          </svg>
+        </div>
+      </div>
+
+      <div className="cardBody">
+        <span className="price">9.987.654 đ</span>
+        <span className="line-through">12.000.000 đ</span>
+        <button className="w-full bg-blue-500 hover:bg-blue-600 p-2.5 sm:p-3 rounded text-white">
           MUA KHÓA HỌC
         </button>
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './BuyCourseNavBar.module.css';
-import StarsRating from '../stars-rating/StarsRating';
+
 
 function BuyCourseNavBar({ details }) {
 	const [hidden, toggleHidden] = useState(true);
@@ -37,14 +37,14 @@ function BuyCourseNavBar({ details }) {
 		>
 			<div className={styles.barContent}>
 				<div className={styles.barLeftContent}>
-					<p className={styles.courseTitle}>{title}</p>
+					<p className={styles.courseTitle}>khoa hoc tm</p>
 					<span>
-						<StarsRating rating={rating} />{' '}
+						
 						<span className={styles.ratingDetails}>
 							<span className={styles.numOfRatings}>
 								(3,322 ratings)
 							</span>{' '}
-							{subscribers} students
+							500 students
 						</span>
 					</span>
 				</div>

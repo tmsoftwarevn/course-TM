@@ -2,10 +2,7 @@ import React from "react";
 import styles from "./SingleCourseHeader.module.css";
 import "./iconStyle.css";
 import { Link } from "react-router-dom";
-import StarsRating from "../stars-rating/StarsRating";
-import Sticky from "react-stickynode";
-import StickyCardContent from "../sticky-card-content/StickyCardContent";
-import img_khoahoc from "../../asset/1700297631-social-media-marketing.jpg";
+
 
 function SingleCourseHeader({ courseDetails, additionalDetails }) {
   const {
@@ -18,9 +15,6 @@ function SingleCourseHeader({ courseDetails, additionalDetails }) {
     last_update_date: lastUpdate,
     caption_languages: languages,
   } = courseDetails;
-
-  const [year, month] = lastUpdate.split("-");
-  const date = new Date(year, month - 1);
 
   return (
     <>
@@ -36,9 +30,7 @@ function SingleCourseHeader({ courseDetails, additionalDetails }) {
             </Link>
           </section>
           <section className={styles.coursePreview}>
-            <figure className={[styles.imageWrapper, styles.hide].join(" ")}>
-              {/* <img src={img_khoahoc} alt="anh" /> */}
-            </figure>
+            
             <section className={styles.mainDetails}>
               <h1 className={styles.title}>Chinh Phục Sản Xuất Video Ngắn</h1>
               <p className="mt-3 font-medium text-lg">

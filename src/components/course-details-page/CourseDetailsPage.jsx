@@ -1,35 +1,32 @@
 import React, { useEffect, useRef, useState } from "react";
 import SingleCourseHeader from "../single-course-header/SingleCourseHeader";
-import CourseObjectives from "../course-objectives/CourseObjectives";
+
 import LoadingSpinner from "../loading-spinner/LoadingSpinner";
 import CourseContent from "../course-content/CourseContent";
 import BuyCourseNavBar from "../buy-course-nav-bar/BuyCourseNavBar";
-import CourseRequirements from "../course-requirements/CourseRequirements";
-import styles from "./CourseDetailsPage.module.css";
+
 import CourseDescription from "../course-description/CourseDescription";
-import InstructorsSection from "../../instructors-section/InstructorsSection";
-import ThisCourseIncludes from "../this-course-includes/ThisCourseIncludes";
-import StudentFeedback from "../student-feedback/StudentFeedback";
-import ReviewsSection from "../reviews-section/ReviewsSection";
+
 import Sticky from "react-stickynode";
 import StickyCardContent from "../sticky-card-content/StickyCardContent";
 import ReactPlayer from "react-player";
 import "../../scss/showVideo.scss";
+import Course_Answer from "../course-answer-guest/CourseAnswer";
 
 function CourseDetailsPage({ courseDetails }) {
-  const [fetched, setAsFetched] = useState(false);
+  const [fetched, setAsFetched] = useState(true);
   const [additionalDetails, setAdditionalDetails] = useState({});
   const [isShowVideo, setShowVideo] = useState(false);
   const [link, setLink] = useState("");
   const refOutside = useRef(null);
 
   useEffect(() => {
-    fetch("https://api.npoint.io/427e24cf2470da9aecca")
-      .then((response) => response.json())
-      .then((jsonFile) => {
-        setAdditionalDetails(jsonFile);
-        setAsFetched(true);
-      });
+    // fetch("https://api.npoint.io/427e24cf2470da9aecca")
+    //   .then((response) => response.json())
+    //   .then((jsonFile) => {
+    //     setAdditionalDetails(jsonFile);
+    //     setAsFetched(true);
+    //   });
   }, []);
 
   useEffect(() => {
@@ -47,9 +44,9 @@ function CourseDetailsPage({ courseDetails }) {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
- 
+
   return fetched ? (
-    <main className="mx-auto max-w-7xl relative">
+    <main className="mx-auto max-w-7xl relative w-full">
       <section>
         <div className="row bg-blue-600">
           <div className="col-md-8">
@@ -59,14 +56,18 @@ function CourseDetailsPage({ courseDetails }) {
             />
           </div>
 
-          <div className="right-content col-md-4 d-none d-md-block absolute right-0">
-            <Sticky innerZ={5} top={0}>
-              <StickyCardContent
-                details={courseDetails}
-                additionalDetails={additionalDetails}
-              />
-            </Sticky>
-          </div>
+          {!isShowVideo && (
+            <div className="right-content col-md-4 d-none d-md-block absolute right-0">
+              <Sticky innerZ={5} top={70}>
+                <StickyCardContent
+                  setLink={setLink}
+                  setShowVideo={setShowVideo}
+                  details={courseDetails}
+                  additionalDetails={additionalDetails}
+                />
+              </Sticky>
+            </div>
+          )}
         </div>
 
         <div className="row px-2">
@@ -85,23 +86,31 @@ function CourseDetailsPage({ courseDetails }) {
           <StickyCardContent
             details={courseDetails}
             additionalDetails={additionalDetails}
+            setLink={setLink}
+            setShowVideo={setShowVideo}
           />
         </div>
+
+        <Course_Answer />
 
         <div className="mx-auto max-w-7xl">
           <CourseDescription details={additionalDetails} />
 
-          <InstructorsSection details={additionalDetails} />
+          {/* <InstructorsSection details={additionalDetails} /> */}
 
           {/* <StudentFeedback details={additionalDetails} /> */}
           {/* <div id="boundary">
             <ReviewsSection details={additionalDetails} />
           </div> */}
-
         </div>
-        <BuyCourseNavBar details={courseDetails} />
-        
+
+
+        {/* <BuyCourseNavBar details={courseDetails} /> */}
+
+
       </section>
+
+      <div className="mb-5"></div>
 
       {isShowVideo && (
         <div className="show-video">

@@ -1,31 +1,21 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Data, FetchState } from '../../App';
-import htmlValues from '../../htmlValues';
 import LoadingSpinner from '../../components/loading-spinner/LoadingSpinner';
 import CourseDetailsPage from '../../components/course-details-page/CourseDetailsPage';
 import styles from './SingleCoursePage.module.css';
 
 function SingleCoursePage() {
-	const coursesData = useContext(Data);
-	const fetched = useContext(FetchState);
+	
+	const [fetched, setAsFetched] = useState(true);
+
 	const { courseId } = useParams();
 	const [courseDetails, setCourseDetails] = useState({});
-	const [notFound, setNotFound] = useState(true);
+	const [notFound, setNotFound] = useState(false);
 
 	useEffect(() => {
-		if (fetched) {
-			htmlValues.forEach((value) => {
-				const section = coursesData[`${value}_res`];
-				section['items'].forEach((course) => {
-					if (course.id.toString() === courseId) {
-						setCourseDetails(course);
-						setNotFound(false);
-					}
-				});
-			});
-		}
-	}, [fetched, notFound, courseDetails, coursesData, courseId]);
+		//call api
+	}, []);
 
 	return fetched ? (
 		notFound ? (

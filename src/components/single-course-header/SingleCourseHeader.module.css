@@ -21,14 +21,13 @@
 
 .mainDetails {
 	padding: 1rem;
-	/* background-color: #1c1d1f; */
 	color: #fff;
 }
 
 @media only screen and (max-width: 576px) {
 	.mainDetails{
-		background-color: #3b82f6;
-		color: white;
+		/* background-color: #3b82f6;
+		color: white; */
 	}
 	.title{
 		font-size: 2rem;
