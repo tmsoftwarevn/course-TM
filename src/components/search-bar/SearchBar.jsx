@@ -2,15 +2,29 @@ import React, { useState } from "react";
 import styles from "./SearchBar.module.css";
 import { useNavigate } from "react-router-dom";
 
-function SearchBar() {
+function SearchBar(props) {
+  const {setKeySearch} = props;
   const [barValue, setBarValue] = useState("");
-  const navigate = useNavigate();
+  const [inputValue, setInputValue] = useState("");
 
+  const navigate = useNavigate();
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      setKeySearch(inputValue)
+      navigate(`/blog/tim-kiem?s=${inputValue}`);
+    }
+  };
+  
   return (
     <div class="cursor-pointer w-full">
       <div class="relative flex items-centern h-12 rounded focus-within:shadow-lg bg-white overflow-hidden">
-        
-        <div class="grid place-items-center h-full w-12 text-blue-600 bg-gray-200">
+        <div
+          class="grid place-items-center h-full w-12 text-blue-600 bg-gray-200"
+          onClick={() => {
+            navigate(`/blog/tim-kiem?s=${inputValue}`);
+            setKeySearch(inputValue)
+          }}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
@@ -32,8 +46,9 @@ function SearchBar() {
           type="text"
           id="search"
           placeholder="Tìm kiếm"
+          onChange={(e) => setInputValue(e.target.value)}
+          onKeyDown={handleKeyPress}
         />
-
       </div>
     </div>
   );

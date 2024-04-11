@@ -11,6 +11,8 @@ import SignUp from "./pages/signup/Signup";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import LayoutUser from "./pages/layout user/LayoutUser";
 import ListBlog from "./pages/blog/ListBlog";
+import Lienhe from "./pages/lienhe/Lienhe";
+import SearchBlog from "./pages/blog/SearchBlog";
 
 
 const App = () => {
@@ -58,6 +60,14 @@ const App = () => {
           {
             path: "blog",
             element: <ListBlog />
+          },
+          {
+            path: "blog/tim-kiem",
+            element: <SearchBlog />
+          },
+          {
+            path: "lien-he",
+            element: <Lienhe />
           }
         ],
       },

@@ -2,7 +2,7 @@ import { Alert, Snackbar } from "@mui/material";
 import { useState } from "react";
 
 const Alert_info = (props) => {
-  const { open, setOpen } = props;
+  const { open, setOpen, err } = props;
   const [vertical, setVertical] = useState("top");
   const [horizontal, setHorizontal] = useState("center");
 
@@ -24,7 +24,8 @@ const Alert_info = (props) => {
           variant="filled"
           sx={{ width: "100%" }}
         >
-          Tài khoản hoặc mật khẩu không chính xác !
+          {/* Tài khoản hoặc mật khẩu không chính xác ! */}
+          {err}
         </Alert>
       </Snackbar>
       

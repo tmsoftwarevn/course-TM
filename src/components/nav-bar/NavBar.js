@@ -21,26 +21,27 @@ function NavBar() {
                 <img src={logo}></img>
               </div>
               <nav className="hidden lg:flex space-x-4">
-                <a
-                  href="#"
-                  className="text-black-100 font-medium hover:text-blue-500 px-3 py-2 "
+                <div
+                 
+                  className="cursor-pointer text-black-100 font-medium hover:text-blue-500 px-3 py-2 "
                   onClick={() => navigate("/khoa-hoc/394676")}
                 >
                   Khóa học
-                </a>
-                <a
-                  href="#"
-                  className="text-black-100 font-medium hover:text-blue-500 px-3 py-2"
+                </div>
+                <div
+                 
+                  className="cursor-pointer text-black-100 font-medium hover:text-blue-500 px-3 py-2"
                   onClick={() => navigate("/blog")}
                 >
                   Blog
-                </a>
-                <a
-                  href="#"
-                  className="text-black-100 font-medium hover:text-blue-500 px-3 py-2"
+                </div>
+                <div
+                 
+                  className="cursor-pointer text-black-100 font-medium hover:text-blue-500 px-3 py-2"
+                  onClick={()=> navigate("/lien-he")}
                 >
                   Liên hệ
-                </a>
+                </div>
               </nav>
 
               <div className="hidden ml-10 lg:flex w-5/12 ">
@@ -48,7 +49,7 @@ function NavBar() {
               </div>
             </div>
 
-            <div className="right hidden lg:flex space-x-4 col-md-3">
+            <div className="right hidden lg:flex space-x-4 col-md-3 justify-end">
               <div
                 className="text-white px-3 py-2 rounded bg-blue-500 hover:bg-blue-600 cursor-pointer"
                 onClick={() => navigate("/login")}
@@ -98,24 +99,27 @@ function NavBar() {
         {isMobileMenuOpen && (
           <div className="lg:hidden bg-blue-500">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a
-                href="#"
-                className="text-white hover:text-white block px-3 py-2"
+              <div
+              
+                className="cursor-pointer text-white hover:text-white block px-3 py-2"
+                onClick={()=>navigate("/khoa-hoc/394676")}
               >
                 Khóa học
-              </a>
-              <a
+              </div>
+              <div
                 href="#"
-                className="text-white hover:text-white block px-3 py-2"
+                className="cursor-pointer text-white hover:text-white block px-3 py-2"
+                onClick={() => navigate("/blog")}
               >
                 Blog
-              </a>
-              <a
+              </div>
+              <div
                 href="#"
-                className="text-white hover:text-white block px-3 py-2"
+                className="cursor-pointer text-white hover:text-white block px-3 py-2"
+                onClick={() => navigate("/lien-he")}
               >
                 Liên hệ
-              </a>
+              </div>
             </div>
             <div className="px-4 w-full">
               <SearchBar />

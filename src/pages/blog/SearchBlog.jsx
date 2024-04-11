@@ -4,38 +4,41 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import { useNavigate, useLocation, useSearchParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const arr = ["1", "2", "2", "3", "4"];
+const arr = ["1", "2", "2"];
 
-const ListBlog = () => {
+const SearchBlog = () => {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const navigate = useNavigate();
-
+  const [keySearch, setKeySearch] = useState(params.get("s") ? params.get("s") : "");
  
   // console.log("iiii", params.get("page"));
 
   const call_Listblog_page = async() =>{
     let currentPage = params.get("page") ? params.get("page") : 1;
-    console.log("iiii", currentPage);
+    console.log("page", currentPage);
+    console.log("key: ", keySearch);
     // call api
   }
 
   useEffect(() =>{
     call_Listblog_page();
-  },[params.get("page")])
+    setKeySearch(params.get("s") ? params.get("s") : "")
+  },[params.get("page"), params.get("s")])
 
   const handlePaginate = (e, page) => {
     
-    navigate(`?page=${page}`);
+    navigate(`?page=${page}&s=${keySearch}`);
   };
 
   return (
     <div className="mb-10">
-      <h1 className="text-center text-4xl font-bold m-10">Blog</h1>
+      <h1 className="text-center text-4xl font-bold mt-10 mb-3">Blog</h1>
+      <p className="mb-10 text-center">Kết quả từ khóa "{keySearch}"</p>
       <div className="max-w-full w-96 mx-auto px-2">
-        <SearchBar />
+        <SearchBar setKeySearch={setKeySearch}/>
       </div>
 
       <div className="list-blog mb-10">
@@ -56,7 +59,7 @@ const ListBlog = () => {
         <Stack spacing={2}>
           <Pagination
             onChange={(e, page) => handlePaginate(e, page)}
-            count={10}
+            count={20}
             color="primary"
           />
         </Stack>
@@ -65,4 +68,4 @@ const ListBlog = () => {
   );
 };
 
-export default ListBlog;
+export default SearchBlog;

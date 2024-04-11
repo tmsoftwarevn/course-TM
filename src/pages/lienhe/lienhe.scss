@@ -1,0 +1,22 @@
+@import '../../scss/responsive.scss';
+
+.contact-l {
+    width: 100%;
+    max-width: 100%;
+    img {
+        width: 100%;
+    }
+}
+.contact-r {
+}
+.lienhe-left {
+    @include sm {
+        background-color: #8ec5fc;
+        background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+
+        border-bottom-right-radius: 150px;
+        border-top-left-radius: 150px;
+    }
+
+    overflow: hidden;
+}

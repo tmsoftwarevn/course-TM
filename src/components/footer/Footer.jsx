@@ -19,9 +19,9 @@ const Footer = () => {
   const navigate = useNavigate();
 
   return (
-    <footer className="footer mx-auto">
+    <footer className="footer px-2">
       <div className="mx-auto max-w-7xl">
-        <div className="row">
+        <div className="row w-full">
           <div class="footer-col col-md-3">
             <h4>Liên hệ</h4>
             <ul className="ul-ft">

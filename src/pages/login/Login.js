@@ -5,7 +5,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
+import { Link } from 'react-router-dom';
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
@@ -13,7 +13,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Alert } from "@mui/material";
-import Alert_info from "../../alert/Alert_login";
+import AlertCustom from "../../alert/AlertCustom";
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
@@ -30,9 +30,9 @@ export default function SignIn() {
       return;
     }
     if (!data.get("password")) {
-        setOpen(true);
-        return;
-      }
+      setOpen(true);
+      return;
+    }
     console.log({
       email: data.get("email"),
       password: data.get("password"),
@@ -101,7 +101,7 @@ export default function SignIn() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="/dang-ky" variant="body2">
+                  <Link to="/dang-ky" variant="body2">
                     {"Chưa có tài khoản? Đăng ký"}
                   </Link>
                 </Grid>
@@ -110,7 +110,7 @@ export default function SignIn() {
           </Box>
         </Container>
       </ThemeProvider>
-      <Alert_info open={open} setOpen={setOpen} />
+      <AlertCustom open={open} setOpen={setOpen} />
     </>
   );
 }
