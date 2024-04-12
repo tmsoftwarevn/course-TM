@@ -24,7 +24,7 @@ function NavBar() {
                 <div
                  
                   className="cursor-pointer text-black-100 font-medium hover:text-blue-500 px-3 py-2 "
-                  onClick={() => navigate("/khoa-hoc/394676")}
+                  onClick={() => navigate("/khoa-hoc")}
                 >
                   Khóa học
                 </div>
@@ -102,7 +102,7 @@ function NavBar() {
               <div
               
                 className="cursor-pointer text-white hover:text-white block px-3 py-2"
-                onClick={()=>navigate("/khoa-hoc/394676")}
+                onClick={()=>navigate("/khoa-hoc")}
               >
                 Khóa học
               </div>

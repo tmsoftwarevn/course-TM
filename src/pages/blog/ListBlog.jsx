@@ -47,7 +47,7 @@ const ListBlog = () => {
                   <Blog />
                 </div>
               </>
-            );
+            )
           })}
         </div>
       </div>

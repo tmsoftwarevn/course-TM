@@ -1,0 +1,26 @@
+@import "./responsive.scss";
+
+.banner-khoahoc {
+    position: relative;
+    @include xs{
+        height: 170px;
+    }
+    height: 250px;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .text-kh {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+.list-khoahoc{
+    @include xs{
+        padding: 0 7px;
+    }
+    
+}

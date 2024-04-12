@@ -4,13 +4,17 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
-
+import { useNavigate } from "react-router-dom";
 import img_1 from "../../asset/PygUbq64RIKgIYC52S65_Học Edit video.jpg"
 
 
-export default function Blog() {
+export default function Blog(props) {
+  const {detail} = props;
+  const navigate = useNavigate();
+
+
   return (
-    <Card >
+    <Card onClick={()=> navigate("/blog/1432")}>
       <CardActionArea>
         <CardMedia
           component="img"

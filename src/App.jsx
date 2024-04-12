@@ -13,39 +13,11 @@ import LayoutUser from "./pages/layout user/LayoutUser";
 import ListBlog from "./pages/blog/ListBlog";
 import Lienhe from "./pages/lienhe/Lienhe";
 import SearchBlog from "./pages/blog/SearchBlog";
-
+import Khoahoc from "./pages/khoahoc/Khoahoc";
+import DetailBlog from "./pages/blog/DetailBlog";
+import WatchVideo from "./pages/watch video/WatchVideo";
 
 const App = () => {
- 
- 
-  // return (
-  //   <div className="App">
-  //     <Data.Provider value={coursesData}>
-  //       <FetchState.Provider value={fetched}>
-  //         <SearchTermContext.Provider value={searchTerm}>
-  //           <SetSearchTermContext.Provider value={setSearchTerm}>
-  //             <NavBar />
-  //             <Routes>
-  //               <Route path="/" element={<HomePage />}></Route>
-  //               <Route
-  //                 path="/Udemy-Clone-ReactJS/courses/:courseId"
-  //                 element={<SingleCoursePage />}
-  //               ></Route>
-
-  //                 <Route path="/login" element={<SignIn />}></Route>
-  // 			  <Route path="/dang-ky" element={<SignUp />}></Route>
-
-  //               <Route path="*" element={<PageNotFound />}></Route>
-  //             </Routes>
-
-  //             <Footer />
-  //           </SetSearchTermContext.Provider>
-  //         </SearchTermContext.Provider>
-  //       </FetchState.Provider>
-  //     </Data.Provider>
-  //   </div>
-  // );
-
   const router = createBrowserRouter(
     [
       {
@@ -54,31 +26,43 @@ const App = () => {
         children: [
           { index: true, element: <HomePage /> },
           {
+            path: "khoa-hoc",
+            element: <Khoahoc />,
+          },
+          {
             path: "khoa-hoc/:courseId",
             element: <SingleCoursePage />,
           },
           {
             path: "blog",
-            element: <ListBlog />
+            element: <ListBlog />,
+          },
+          {
+            path: "blog/:slug",
+            element: <DetailBlog />,
           },
           {
             path: "blog/tim-kiem",
-            element: <SearchBlog />
+            element: <SearchBlog />,
           },
           {
             path: "lien-he",
-            element: <Lienhe />
-          }
+            element: <Lienhe />,
+          },
         ],
       },
       {
         path: "/login",
-        element: <SignIn />
+        element: <SignIn />,
       },
       {
         path: "/dang-ky",
-        element: <SignUp />
+        element: <SignUp />,
       },
+      {
+        path: "/video",
+        element: <WatchVideo />
+      }
     ]
     // {
     //   basename: "/deploy_FE_TM_Media",
