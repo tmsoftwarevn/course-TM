@@ -4,21 +4,34 @@ import { ExpandMore } from "@mui/icons-material";
 import { useEffect } from "react";
 import { useState } from "react";
 import styles from "./CourseSection.module.css";
+import Checkbox from "@mui/material/Checkbox";
 
-function CourseSectionVideo({ ExpandAll, sectionDetails, idx, setShowVideo, setLink }) {
+function CourseSectionVideo({
+  ExpandAll,
+  sectionDetails,
+  idx,
+  setShowVideo,
+  setLink,
+}) {
   const [open, toggleOpen] = useState(false);
   //console.log("detallllll", sectionDetails);
+  const [totalChecked, setTotalChecked] = useState(0);
+
+ const handleSelectCheckbox = (e) =>{
+  if(e.target.checked === true){
+    setTotalChecked(+totalChecked + 1);
+  }
+  else{
+    setTotalChecked(+totalChecked - 1);
+  }
+ }
+
   const {
     title,
     items,
     lecture_count: sectionLectures,
     content_length: sectionLength,
   } = sectionDetails;
-
-  const handlePreviewVideo = () => {
-    setShowVideo(true);
-    //setLink();
-  };
 
   useEffect(() => {
     toggleOpen(ExpandAll);
@@ -32,6 +45,8 @@ function CourseSectionVideo({ ExpandAll, sectionDetails, idx, setShowVideo, setL
     toggleOpen(!open);
   };
 
+  console.log('llll', items)
+
   return (
     <Accordion expanded={open} className={styles.accordion}>
       <AccordionSummary
@@ -40,29 +55,18 @@ function CourseSectionVideo({ ExpandAll, sectionDetails, idx, setShowVideo, setL
         onClick={handleClick}
       >
         <span className={styles.summaryText}>{title}</span>
-        <span className={`${styles.hide}`}>
-          {sectionLectures} Bài
-        </span>
+        <span className={`${styles.hide}`}>{sectionLectures} Bài</span>
       </AccordionSummary>
       <AccordionDetails className={styles.accordionDetails}>
         {items.map((item, idx) => {
           return (
-            <div
-              key={idx}
-              className={styles.lecture}
-              onClick={() => handlePreviewVideo()}
-            >
-              <span
-                className={
-                  (item.content_summary.includes("page") // check xem la tai lieu hay video
-                    ? "fa-regular fa-file"
-                    : "fa-solid fa-circle-play text-blue-600") +
-                  ` ${styles.lectureIcon}`
-                }
-              ></span>
+            <div key={idx} className={styles.lecture}>
+              <Checkbox               
+                onChange={(e) =>handleSelectCheckbox(e)}
+                inputProps={{ "aria-label": "controlled" }}
+              />
 
               <span className={styles.lectureTitle}>{item.title}</span>
-              
             </div>
           );
         })}

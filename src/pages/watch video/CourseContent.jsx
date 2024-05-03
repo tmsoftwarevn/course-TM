@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./CourseContent.module.css";
 import CourseSection from "./CourseSectionVideo";
 import { List, ListItem } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const khoa_hoc = {
   sections: [
@@ -317,6 +318,7 @@ const khoa_hoc = {
 
 function MenuVideo({ details, setLink, setShowVideo }) {
   const [open, toggleOpen] = useState(false);
+  const navigate = useNavigate();
 
   //console.log("detail: ", details);
 
@@ -329,7 +331,8 @@ function MenuVideo({ details, setLink, setShowVideo }) {
 
   return (
     <div className={styles.contentContainer}>
-      <p className={styles.header}>Video</p>
+      {/* <p className={styles.header}>Video</p> */}
+     
       <section className={styles.beforeContent}></section>
       {/* lặp từng bài học, lấy tất cả bài giảng của bài học */}
       <List>

@@ -53,7 +53,7 @@ const Footer = () => {
                     marginTop: "5px",
                   }}
                 />
-                {process.env.REACT_APP_PHONE}
+                {process.env.REACT_APP_PHONE}             
               </li>
               <li
                 onClick={() => {

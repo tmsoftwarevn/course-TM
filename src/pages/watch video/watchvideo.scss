@@ -1,11 +1,45 @@
+@import '../../scss/responsive.scss';
 
-.left-video{
+.left-video {
     overflow-y: auto;
     height: 96vh;
 }
-.right-video{
-    iframe{
-        width: 100%;
-        height: 90vh;
+
+// .right-video {
+//     overflow-y: auto;
+//     height: 90vh;
+//     @include xs{
+//         height: 100%;
+//         width: 100%;
+//     }
+//     iframe {
+//         width: 100%;
+//         height: 100%;
+//     }
+// }
+
+
+// ti le khung
+.right-video {
+    position: relative;
+    @include xs{
+        padding-bottom: 56.25%; /* 16:9 */ 
+    }
+    @include xs{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+       
+    }
+    iframe {
+        @include xs{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
     }
 }
