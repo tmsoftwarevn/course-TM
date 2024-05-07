@@ -46,7 +46,7 @@ function CourseDetailsPage({ courseDetails }) {
   }, []);
 
   return fetched ? (
-    <main className="mx-auto max-w-7xl relative w-full">
+    <main className="mx-auto max-w-6xl relative w-full">
       <section>
         <div className="row bg-blue-600">
           <div className="col-md-8">
@@ -93,7 +93,7 @@ function CourseDetailsPage({ courseDetails }) {
 
         <Course_Answer />
 
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-6xl">
           <CourseDescription details={additionalDetails} />
 
           {/* <InstructorsSection details={additionalDetails} /> */}
@@ -104,10 +104,7 @@ function CourseDetailsPage({ courseDetails }) {
           </div> */}
         </div>
 
-
         {/* <BuyCourseNavBar details={courseDetails} /> */}
-
-
       </section>
 
       <div className="mb-5"></div>

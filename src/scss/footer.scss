@@ -1,4 +1,9 @@
 @import './responsive.scss';
+
+:root{
+  --color-main: #2563eb;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -9,7 +14,7 @@
 
 .footer {
   
-  background-color: #3b82f6;
+  background-color: var(--color-main);
   padding: 40px 0 10px;
   background-image: url('../asset/bg-white-footer.png');
   background-size: cover;
@@ -76,7 +81,7 @@
     cursor: pointer;
     color: white;
     &:hover {
-      color: #3b82f6;
+      color: var(--color-main);
       background-color: white;
       transition: 0.3s;
     }

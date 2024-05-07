@@ -10,7 +10,7 @@ const Khoahoc = () => {
 
   return (
     <div className="Khoahoc">
-      <div className="max-w-7xl mx-auto overflow-hidden">
+      <div className="max-w-6xl mx-auto overflow-hidden">
         <div className="banner-khoahoc">
           <img src={banner} />
           <div className="text-kh text-white text-3xl md:text-5xl font-bold">

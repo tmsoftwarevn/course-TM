@@ -42,7 +42,7 @@ const Lienhe = () => {
 
   return (
     <div className="lien-he pt-3 pb-3 px-2">
-      <div className="max-w-7xl mx-auto overflow-hidden ">
+      <div className="max-w-6xl mx-auto overflow-hidden ">
         <div className="row">
           <div className="col-md-5 lienhe-left ">
             <img className="w-full" src={img_test}></img>

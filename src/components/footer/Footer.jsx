@@ -20,7 +20,7 @@ const Footer = () => {
 
   return (
     <footer className="footer px-2">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-6xl">
         <div className="row w-full">
           <div class="footer-col col-md-3">
             <h4>Liên hệ</h4>
@@ -53,7 +53,7 @@ const Footer = () => {
                     marginTop: "5px",
                   }}
                 />
-                {process.env.REACT_APP_PHONE}             
+                {process.env.REACT_APP_PHONE}
               </li>
               <li
                 onClick={() => {
@@ -121,8 +121,6 @@ const Footer = () => {
                 <SiZalo className="zalo" />
               </div>
             </div> */}
-
-
           </div>
           <div class="footer-col col-md-3">
             <h4>Khóa học</h4>

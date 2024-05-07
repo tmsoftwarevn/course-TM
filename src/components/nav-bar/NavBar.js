@@ -14,31 +14,31 @@ function NavBar() {
   return (
     <>
       <header className="bg-white sticky top-0 left-0 w-full z-50 shadow">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-3">
           <div className="flex items-center justify-between h-16 w-full">
             <div className="left flex align-items-center col-md-9">
-              <div className="flex-shrink-0 logo" onClick={() => navigate("/")}>
+              <div
+                className="flex-shrink-0 logo cursor-pointer"
+                onClick={() => navigate("/")}
+              >
                 <img src={logo}></img>
               </div>
               <nav className="hidden lg:flex space-x-4">
                 <div
-                 
                   className="cursor-pointer text-black-100 font-medium hover:text-blue-500 px-3 py-2 "
                   onClick={() => navigate("/khoa-hoc")}
                 >
                   Khóa học
                 </div>
                 <div
-                 
                   className="cursor-pointer text-black-100 font-medium hover:text-blue-500 px-3 py-2"
                   onClick={() => navigate("/blog")}
                 >
                   Blog
                 </div>
                 <div
-                 
                   className="cursor-pointer text-black-100 font-medium hover:text-blue-500 px-3 py-2"
-                  onClick={()=> navigate("/lien-he")}
+                  onClick={() => navigate("/lien-he")}
                 >
                   Liên hệ
                 </div>
@@ -100,9 +100,8 @@ function NavBar() {
           <div className="lg:hidden bg-blue-500">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <div
-              
                 className="cursor-pointer text-white hover:text-white block px-3 py-2"
-                onClick={()=>navigate("/khoa-hoc")}
+                onClick={() => navigate("/khoa-hoc")}
               >
                 Khóa học
               </div>

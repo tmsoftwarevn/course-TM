@@ -13,21 +13,19 @@ const ListBlog = () => {
   const params = new URLSearchParams(location.search);
   const navigate = useNavigate();
 
- 
   // console.log("iiii", params.get("page"));
 
-  const call_Listblog_page = async() =>{
+  const call_Listblog_page = async () => {
     let currentPage = params.get("page") ? params.get("page") : 1;
     console.log("iiii", currentPage);
     // call api
-  }
+  };
 
-  useEffect(() =>{
+  useEffect(() => {
     call_Listblog_page();
-  },[params.get("page")])
+  }, [params.get("page")]);
 
   const handlePaginate = (e, page) => {
-    
     navigate(`?page=${page}`);
   };
 
@@ -39,7 +37,7 @@ const ListBlog = () => {
       </div>
 
       <div className="list-blog mb-10">
-        <div className="row mx-auto max-w-7xl">
+        <div className="row mx-auto max-w-6xl">
           {arr.map((item, id) => {
             return (
               <>
@@ -47,7 +45,7 @@ const ListBlog = () => {
                   <Blog />
                 </div>
               </>
-            )
+            );
           })}
         </div>
       </div>

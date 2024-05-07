@@ -3,7 +3,6 @@ import styles from "./SingleCourseHeader.module.css";
 import "./iconStyle.css";
 import { Link } from "react-router-dom";
 
-
 function SingleCourseHeader({ courseDetails, additionalDetails }) {
   const {
     title,
@@ -18,7 +17,7 @@ function SingleCourseHeader({ courseDetails, additionalDetails }) {
 
   return (
     <>
-      <main className="mx-auto max-w-7xl bg-blue-600">
+      <main className="mx-auto max-w-6xl bg-blue-600">
         <div className={styles.body}>
           <section className={styles.categoriesSection}>
             <Link to="/">
@@ -30,7 +29,6 @@ function SingleCourseHeader({ courseDetails, additionalDetails }) {
             </Link>
           </section>
           <section className={styles.coursePreview}>
-            
             <section className={styles.mainDetails}>
               <h1 className={styles.title}>Chinh Phục Sản Xuất Video Ngắn</h1>
               <p className="mt-3 font-medium text-lg">
