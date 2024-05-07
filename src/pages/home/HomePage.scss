@@ -83,7 +83,7 @@
 }
 
 .content-654 {
-    margin-top: 200px;
+    margin-top: 150px;
     height: 300px;
     &__group {
         background: linear-gradient(180deg, rgb(18, 165, 244) 0%, rgba(18, 165, 244, 0.5) 100%);
@@ -101,8 +101,7 @@
             }
         }
     }
-    &__right {
-    }
+    
     &__title {
         font-weight: 600;
         font-size: 24px;
@@ -112,7 +111,6 @@
     &__mota {
         margin-top: 10px;
         color: white;
-    
     }
 
     &__button {
@@ -120,20 +118,103 @@
         color: white;
         background-color: var(--color-main);
         cursor: pointer;
-        &:hover{
+        &:hover {
             background-color: #0b54f2;
         }
+    }
+}
+
+.content-834 {
+    margin-top: 150px;
+    &__group {
+        
+        &-left {
+            &-title{
+                color: var(--color-main);
+                font-size: 24px;
+                font-weight: 600;
+            }
+            &-content{
+                margin-top: 20px;
+                &-description{
+                    display: flex;
+                    align-items: center;
+                    margin-top: 5px;
+                }
+            }
+        }
+        &-right {
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+.content-123 {
+    margin-top: 150px;
+   
+    &__group {
+        background: linear-gradient(90deg, rgba(255,147,85,1) 0%, rgba(249,160,82,0.8856792717086834) 37%, rgba(255,147,85,1) 81%);        align-items: center;
+        justify-content: center;
+        .img-content-123 {
+          
+            img {
+                height: 100%;
+                width: auto;
+                margin: 0 auto;
+            }
+        }
+    }
+    
+    &__title {
+        font-weight: 600;
+        font-size: 24px;
+        color: white;
+    }
+
+    &__mota {
+        margin-top: 10px;
+        color: white;
+        display: flex;
+        align-items: center;
     }
 
 }
 
-.content-834{
-    margin-top: 80px;
-    &__group{
-        display: flex;
-        align-items: center;
-        &-right{
-            
+.content-957 {
+    margin-top: 150px;
+    &__group {
+        
+        &-left {
+            &-title{
+                color: var(--color-main);
+                font-size: 24px;
+                font-weight: 600;
+            }
+            &-content{
+                margin-top: 20px;
+                &-description{
+                    display: flex;
+                    align-items: center;
+                    margin-top: 5px;
+                }
+            }
         }
+        &-right {
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
+
+.khoahoc-home{
+    margin-top: 150px;
+    &__title{
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--color-main);
     }
 }

@@ -22,7 +22,7 @@ const Khoahoc = () => {
             arr.map((item, map) => {
               return (
                 <div
-                  className="col-sm-6 col-md-3 mt-4"
+                  className="col-sm-6 col-md-4 mt-4"
                   onClick={() => navigate("/khoa-hoc/232")}
                 >
                   <SingleKhoahoc />

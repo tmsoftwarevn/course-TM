@@ -6,16 +6,26 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import khoitao from "../../asset/khoi-tao-image.png";
 import img_teaching from "../../asset/teacher-is-teaching-school-carto.jpg";
+import img_edit from "../../asset/edit.svg";
+import chungchi from "../../asset/chung-chi.png";
+import { TiTickOutline } from "react-icons/ti";
+import ttt from "../../asset/7RJ4m1yLRcOZNvyt8bge_banner2.png";
+import SingleKhoahoc from "../khoahoc/SingleKhoahoc";
+import { useNavigate } from "react-router-dom";
+import KhoahocHome from "./KhoahocHome";
 
+const arr = ["1"];
 
 function HomePage() {
+  const navigate = useNavigate();
+
   useEffect(function () {
     Aos.init({ duration: 1000, once: true });
   }, []);
 
   return (
     <>
-      <div class="homepage">
+      <div class="homepage overflow-hidden">
         <section class="banner-gradiant">
           <div class="max-w-6xl mx-auto">
             <div class="row banner">
@@ -172,7 +182,7 @@ function HomePage() {
           </div>
         </section>
 
-        <section className="content-654">
+        <section className="content-654" data-aos="fade-up">
           <div className="max-w-6xl mx-auto">
             <div className="row content-654__group">
               <div className="col-md-6 img-content-654">
@@ -184,26 +194,151 @@ function HomePage() {
                   CÙNG BẠN LAN TỎA TRI THỨC ĐẾN HÀNG TRIỆU NGƯỜI
                 </div>
                 <div className="content-654__button rounded-full size-fit px-3 py-2">
-                  MUA NGAY
+                  KHÁM PHÁ
                 </div>
-
               </div>
             </div>
           </div>
         </section>
 
-        <section className="content-834">
+        <section className="content-834" data-aos="fade-up">
+          <div className="max-w-6xl mx-auto">
             <div className="row content-834__group">
-              <div className="col-md-6 content-834__group-left"></div>
-              <div className="col-md-6 content-834__group-right">
-                <img src={img_teaching} />
+              <div className="col-md-6 content-834__group-left">
+                <div className="content-834__group-left-title">
+                  HỌC TRỰC TUYẾN QUA VIDEO
+                </div>
+                <div className="content-834__group-left-content">
+                  <div className="content-834__group-left-content-description">
+                    <img className="mr-3" src={img_edit} />
+                    <span>Không yêu cầu có kiến thức trước</span>
+                  </div>
+                  <div className="content-834__group-left-content-description">
+                    <img className="mr-3" src={img_edit} />
+                    <span>Không yêu cầu có kiến thức trước</span>
+                  </div>
+                  <div className="content-834__group-left-content-description">
+                    <img className="mr-3" src={img_edit} />
+                    <span>Không yêu cầu có kiến thức trước</span>
+                  </div>
+                  <div className="content-834__group-left-content-description">
+                    <img className="mr-3" src={img_edit} />
+                    <span>Giải pháp học trực tuyến</span>
+                  </div>
+                  <div className="content-834__group-left-content-description">
+                    <img className="mr-3" src={img_edit} />
+                    <span>Giải pháp học trực tuyến</span>
+                  </div>
+                  <div className="content-834__group-left-content-description">
+                    <img className="mr-3" src={img_edit} />
+                    <span>Giải pháp học trực tuyến</span>
+                  </div>
+                  <div className="content-834__group-left-content-description">
+                    <img className="mr-3" src={img_edit} />
+                    <span>Giải pháp học trực tuyến</span>
+                  </div>
+                </div>
               </div>
-
+              <div className="col-md-6 content-834__group-right">
+                <img className="rounded" src={img_teaching} />
+              </div>
             </div>
-
+          </div>
         </section>
 
+        <section className="content-123" data-aos="fade-up">
+          <div className="row content-123__group">
+            <div className="col-md-6 img-content-123">
+              <img src={chungchi} />
+            </div>
+            <div className="col-md-6 content-123__right">
+              <div className="content-123__title">KHÓA HỌC TEXT TEXT</div>
+              <div className="text-white">
+                Clita diam vero et consetetur ipsum dolor, at amet stet.
+              </div>
+              <div className="content-123__mota">
+                <TiTickOutline />
+                <span>Giải pháp học trực tuyến</span>
+              </div>
+              <div className="content-123__mota">
+                <TiTickOutline />
+                <span>Giải pháp học trực tuyến</span>
+              </div>
+              <div className="content-123__mota">
+                <TiTickOutline />
+                <span>Giải pháp học trực tuyến</span>
+              </div>
+              <div className="content-123__mota">
+                <TiTickOutline />
+                <span>Giải pháp học trực tuyến</span>
+              </div>
+            </div>
+          </div>
+        </section>
 
+        <section className="content-957" data-aos="fade-up">
+          <div className="max-w-6xl mx-auto">
+            <div className="row content-834__group">
+              <div className="col-md-6 content-834__group-left">
+                <div className="content-834__group-left-title">
+                  HỌC TRỰC TUYẾN QUA VIDEO
+                </div>
+                <div className="content-834__group-left-content">
+                  <div className="content-834__group-left-content-description">
+                    <img className="mr-3" src={img_edit} />
+                    <span>Không yêu cầu có kiến thức trước</span>
+                  </div>
+                  <div className="content-834__group-left-content-description">
+                    <img className="mr-3" src={img_edit} />
+                    <span>Không yêu cầu có kiến thức trước</span>
+                  </div>
+                  <div className="content-834__group-left-content-description">
+                    <img className="mr-3" src={img_edit} />
+                    <span>Không yêu cầu có kiến thức trước</span>
+                  </div>
+                  <div className="content-834__group-left-content-description">
+                    <img className="mr-3" src={img_edit} />
+                    <span>Giải pháp học trực tuyến</span>
+                  </div>
+                  <div className="content-834__group-left-content-description">
+                    <img className="mr-3" src={img_edit} />
+                    <span>Giải pháp học trực tuyến</span>
+                  </div>
+                  <div className="content-834__group-left-content-description">
+                    <img className="mr-3" src={img_edit} />
+                    <span>Giải pháp học trực tuyến</span>
+                  </div>
+                  <div className="content-834__group-left-content-description">
+                    <img className="mr-3" src={img_edit} />
+                    <span>Giải pháp học trực tuyến</span>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-6 content-834__group-right">
+                <img className="rounded" src={ttt} />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="khoahoc-home">
+          <div className="max-w-6xl mx-auto">
+            <div className="khoahoc-home__title text-center">KHÓA HỌC TM</div>
+            <div className="row">
+              {arr &&
+                arr.map((item, map) => {
+                  return (
+                    <div
+                      className="col-sm-6 col-md-4 mt-4"
+                      onClick={() => navigate("/khoa-hoc/232")}
+                    >
+                      <KhoahocHome />
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
+        </section>
       </div>
     </>
   );
