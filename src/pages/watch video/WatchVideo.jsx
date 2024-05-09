@@ -14,6 +14,8 @@ const WatchVideo = () => {
   const navigate = useNavigate();
   const [openDraw, setOpenDraw] = useState(false);
   const [process, setProcess] = useState(0);
+  const [link, setLink] = useState("");
+  const [title,setTitle] = useState();
 
   const [totalChecked, setTotalChecked] = useState(
     localStorage.getItem("processStudy")
@@ -26,6 +28,8 @@ const WatchVideo = () => {
     let p = Math.ceil((+totalChecked.length / 15) * 100);
     setProcess(p > 100 ? 100 : p); //tổng số bài đã tick chia
   }, [totalChecked]);
+
+  console.log("llll", title);
 
   return (
     <>
@@ -60,6 +64,9 @@ const WatchVideo = () => {
             <MenuVideo
               totalChecked={totalChecked}
               setTotalChecked={setTotalChecked}
+              setLink={setLink}
+              setTitle={setTitle}
+              setOpenDraw={setOpenDraw}
             />
           </div>
 
@@ -84,14 +91,21 @@ const WatchVideo = () => {
 
           <div className="right-video col-xl-9 mt-2">
             <div className="name-baihoc">
-              Bài 1: Công thức viết content hiệu quả
+              {title}
             </div>
-            <video controls>
+            {/* <video controls crossorigin="anonymous">
               <source
-                src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+                src= {link}
                 type="video/mp4"
               />
-            </video>
+            </video> */}
+
+            <ReactPlayer
+              className="video-rp"
+              playing={true}
+              controls={true}
+              url={link}
+            />
           </div>
         </div>
 
@@ -100,7 +114,9 @@ const WatchVideo = () => {
           setTotalChecked={setTotalChecked}
           openDraw={openDraw}
           setOpenDraw={setOpenDraw}
-          process = {process}
+          process={process}
+          setLink={setLink}
+          setTitle={setTitle}
         />
       </div>
     </>

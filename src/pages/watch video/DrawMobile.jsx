@@ -15,7 +15,15 @@ export default function MobileDrawer(props) {
     right: false,
   });
   const navigate = useNavigate();
-  const {openDraw, setOpenDraw, totalChecked, setTotalChecked, process} = props;
+  const {
+    setTitle,
+    openDraw,
+    setOpenDraw,
+    totalChecked,
+    setTotalChecked,
+    process,
+    setLink,
+  } = props;
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -55,14 +63,19 @@ export default function MobileDrawer(props) {
         <p className="pt-2 mb-3">Đã hoàn thành {process}%</p>
       </div>
 
-      <MenuVideo totalChecked={totalChecked} setTotalChecked={setTotalChecked} />
-
+      <MenuVideo
+        setTitle={setTitle}
+        setOpenDraw={setOpenDraw}
+        setLink={setLink}
+        totalChecked={totalChecked}
+        setTotalChecked={setTotalChecked}
+      />
     </Box>
   );
   const useStyles = makeStyles({
     drawerPaper: {
       // marginTop: "65px",
-      paddingTop: "65px"
+      paddingTop: "65px",
     },
   });
   const classes = useStyles();
@@ -70,7 +83,6 @@ export default function MobileDrawer(props) {
     <div>
       {["left"].map((anchor) => (
         <React.Fragment key={anchor}>
-           
           <Drawer
             anchor={anchor}
             open={openDraw}

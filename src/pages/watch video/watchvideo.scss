@@ -5,30 +5,15 @@
     height: 96vh;
 }
 
-// .right-video {
-//     overflow-y: auto;
-//     height: 90vh;
-//     @include xs{
-//         height: 100%;
-//         width: 100%;
-//     }
-//     iframe {
-//         width: 100%;
-//         height: 100%;
-//     }
-// }
-
-// ti le khung
-
 .right-video {
-    overflow-y: auto;
+    overflow-y: scroll;
     .name-baihoc {
         font-weight: 600;
         font-size: 18px;
         padding: 10px 0 20px 20px;
         border-bottom: 1px solid #ccc;
         margin-bottom: 50px;
-        @include xl{
+        @include xl {
             margin-bottom: 0;
         }
     }
@@ -41,11 +26,17 @@
     @include xl {
         padding-top: 0;
     }
-    video{
+
+    .video-rp {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover !important;
         @include xl{
-            max-height: 80vh;
-            width: 100%;
-            object-fit: cover;
+            // height: calc(100vh - 64px) !important;
+            height: 500px !important;
+            aspect-ratio: 16/9 !important;
         }
+        
+       
     }
 }

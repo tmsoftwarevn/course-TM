@@ -16,7 +16,7 @@ const khoa_hoc = {
           learn_url: "/course/pythonforbeginners/learn/lecture/2239858",
           icon_class: "udi udi-play-circle",
           description: "",
-          preview_url: "/course/394676/preview/?startPreviewId=3862852",
+          video_url: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
           object_index: 1,
           video_asset_id: 3862852,
           content_summary: "04:07",
@@ -32,7 +32,8 @@ const khoa_hoc = {
           learn_url: "/course/pythonforbeginners/learn/lecture/2239862",
           icon_class: "udi udi-play-circle",
           description: "",
-          preview_url: "/course/394676/preview/?startPreviewId=3862806",
+          video_url:
+            "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
           object_index: 2,
           video_asset_id: 3862806,
           content_summary: "01:37",
@@ -42,7 +43,7 @@ const khoa_hoc = {
           has_linked_workspace: false,
         },
       ],
-      title: "Giới thiệu series tổng & khoá học",
+      title: "Big Buck Bunny",
       lecture_count: 2,
       content_length: 344,
       content_length_text: "05:44",
@@ -52,12 +53,12 @@ const khoa_hoc = {
       items: [
         {
           id: 343255,
-          title: "Giới thiệu khóa học Chiến thắng những Đòn tâm lý",
+          title: "The first Blender Open Movie from 2006",
           item_type: "lecture",
           learn_url: "/course/pythonforbeginners/learn/lecture/2239858",
           icon_class: "udi udi-play-circle",
           description: "",
-          preview_url: "/course/394676/preview/?startPreviewId=3862852",
+          video_url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
           object_index: 1,
           video_asset_id: 3862852,
           content_summary: "04:07",
@@ -73,7 +74,7 @@ const khoa_hoc = {
           learn_url: "/course/pythonforbeginners/learn/lecture/2239862",
           icon_class: "udi udi-play-circle",
           description: "",
-          preview_url: "/course/394676/preview/?startPreviewId=3862806",
+          video_url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
           object_index: 2,
           video_asset_id: 3862806,
           content_summary: "01:37",
@@ -83,7 +84,7 @@ const khoa_hoc = {
           has_linked_workspace: false,
         },
       ],
-      title: "Giới thiệu series tổng & khoá học",
+      title: "The first Blender Open Movie from 2006",
       lecture_count: 2,
       content_length: 344,
       content_length_text: "05:44",
@@ -98,7 +99,7 @@ const khoa_hoc = {
           learn_url: "/course/pythonforbeginners/learn/lecture/2239858",
           icon_class: "udi udi-play-circle",
           description: "",
-          preview_url: "/course/394676/preview/?startPreviewId=3862852",
+          video_url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
           object_index: 1,
           video_asset_id: 3862852,
           content_summary: "04:07",
@@ -109,12 +110,12 @@ const khoa_hoc = {
         },
         {
           id: 867544,
-          title: "Vạch trần 07 sự thật về ngành bán hàng",
+          title: "For Bigger Escape",
           item_type: "lecture",
           learn_url: "/course/pythonforbeginners/learn/lecture/2239862",
           icon_class: "udi udi-play-circle",
           description: "",
-          preview_url: "/course/394676/preview/?startPreviewId=3862806",
+          video_url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
           object_index: 2,
           video_asset_id: 3862806,
           content_summary: "01:37",
@@ -124,7 +125,7 @@ const khoa_hoc = {
           has_linked_workspace: false,
         },
       ],
-      title: "Giới thiệu series tổng & khoá học",
+      title: "For Bigger Escape",
       lecture_count: 2,
       content_length: 344,
       content_length_text: "05:44",
@@ -139,7 +140,7 @@ const khoa_hoc = {
           learn_url: "/course/pythonforbeginners/learn/lecture/2239858",
           icon_class: "udi udi-play-circle",
           description: "",
-          preview_url: "/course/394676/preview/?startPreviewId=3862852",
+          video_url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
           object_index: 1,
           video_asset_id: 3862852,
           content_summary: "04:07",
@@ -155,7 +156,7 @@ const khoa_hoc = {
           learn_url: "/course/pythonforbeginners/learn/lecture/2239862",
           icon_class: "udi udi-play-circle",
           description: "",
-          preview_url: "/course/394676/preview/?startPreviewId=3862806",
+          video_url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
           object_index: 2,
           video_asset_id: 3862806,
           content_summary: "01:37",
@@ -180,7 +181,7 @@ const khoa_hoc = {
           learn_url: "/course/pythonforbeginners/learn/lecture/2239858",
           icon_class: "udi udi-play-circle",
           description: "",
-          preview_url: "/course/394676/preview/?startPreviewId=3862852",
+          video_url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
           object_index: 1,
           video_asset_id: 3862852,
           content_summary: "04:07",
@@ -196,7 +197,7 @@ const khoa_hoc = {
           learn_url: "/course/pythonforbeginners/learn/lecture/2239862",
           icon_class: "udi udi-play-circle",
           description: "",
-          preview_url: "/course/394676/preview/?startPreviewId=3862806",
+          video_url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
           object_index: 2,
           video_asset_id: 3862806,
           content_summary: "01:37",
@@ -216,12 +217,12 @@ const khoa_hoc = {
       items: [
         {
           id: 1978234,
-          title: "Giới thiệu khóa học Chiến thắng những Đòn tâm lý",
+          title: "The first Blender Open Movie from 2006",
           item_type: "lecture",
           learn_url: "/course/pythonforbeginners/learn/lecture/2239858",
           icon_class: "udi udi-play-circle",
           description: "",
-          preview_url: "/course/394676/preview/?startPreviewId=3862852",
+          video_url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
           object_index: 1,
           video_asset_id: 3862852,
           content_summary: "04:07",
@@ -237,7 +238,7 @@ const khoa_hoc = {
           learn_url: "/course/pythonforbeginners/learn/lecture/2239862",
           icon_class: "udi udi-play-circle",
           description: "",
-          preview_url: "/course/394676/preview/?startPreviewId=3862806",
+          video_url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
           object_index: 2,
           video_asset_id: 3862806,
           content_summary: "01:37",
@@ -247,7 +248,7 @@ const khoa_hoc = {
           has_linked_workspace: false,
         },
       ],
-      title: "Giới thiệu series tổng & khoá học",
+      title: "The first Blender Open Movie from 2006",
       lecture_count: 2,
       content_length: 344,
       content_length_text: "05:44",
@@ -262,7 +263,7 @@ const khoa_hoc = {
           learn_url: "/course/pythonforbeginners/learn/lecture/2239858",
           icon_class: "udi udi-play-circle",
           description: "",
-          preview_url: "/course/394676/preview/?startPreviewId=3862852",
+          video_url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
           object_index: 1,
           video_asset_id: 3862852,
           content_summary: "04:07",
@@ -278,7 +279,7 @@ const khoa_hoc = {
           learn_url: "/course/pythonforbeginners/learn/lecture/2239862",
           icon_class: "udi udi-play-circle",
           description: "",
-          preview_url: "/course/394676/preview/?startPreviewId=3862806",
+          video_url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
           object_index: 2,
           video_asset_id: 3862806,
           content_summary: "01:37",
@@ -294,7 +295,7 @@ const khoa_hoc = {
           learn_url: "/course/pythonforbeginners/learn/lecture/2239862",
           icon_class: "udi udi-play-circle",
           description: "",
-          preview_url: "/course/394676/preview/?startPreviewId=3862806",
+          video_url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
           object_index: 2,
           video_asset_id: 3862806,
           content_summary: "01:37",
@@ -316,9 +317,17 @@ const khoa_hoc = {
   total_time: "10h30p20s",
 };
 
-function MenuVideo({ details, setLink, setShowVideo, setTotalChecked, totalChecked }) {
+function MenuVideo({
+  details,
+  setLink,
+  setShowVideo,
+  setTotalChecked,
+  totalChecked,
+  setOpenDraw,
+  setTitle
+}) {
   const [open, toggleOpen] = useState(false);
- 
+
   const navigate = useNavigate();
 
   //console.log("detail: ", details);
@@ -344,7 +353,10 @@ function MenuVideo({ details, setLink, setShowVideo, setTotalChecked, totalCheck
               setShowVideo={setShowVideo} // truyền sự kiện click show video
               setLink={setLink}
               setTotalChecked={setTotalChecked}
-              totalChecked = {totalChecked}
+              totalChecked={totalChecked}
+              setOpenDraw= {setOpenDraw}
+              setTitle = {setTitle}
+              
             />
           );
           return (

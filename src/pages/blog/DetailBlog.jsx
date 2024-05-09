@@ -38,8 +38,8 @@ const DetailBlog = () => {
             </nav>
           </div>
           <div className="col-md-3">
-            <div className="text-black font-bold text-2xl mb-3">
-              Bài viết nổi bật
+            <div className="text-black font-semibold text-2xl mb-3">
+              Bài viết liên quan
             </div>
             <Blog />
           </div>

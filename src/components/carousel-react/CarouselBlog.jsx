@@ -46,7 +46,7 @@ const CarouselBlog = (props) => {
       {arrProp &&
         arrProp.map((item, idx) => {
           return (
-            <div key={idx} onClick={() => navigate("/khoa-hoc/232")}>
+            <div key={idx} onClick={() => navigate("/blog/232")}>
                 <Blog />
             </div>
           );

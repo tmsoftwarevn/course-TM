@@ -14,6 +14,8 @@ function CourseSectionVideo({
   setLink,
   setTotalChecked,
   totalChecked,
+  setOpenDraw,
+  setTitle
 }) {
   const [open, toggleOpen] = useState(false);
 
@@ -40,6 +42,10 @@ function CourseSectionVideo({
 
   useEffect(() => {
     toggleOpen(idx === 0 ? true : false);
+    if(idx === 0){
+      setLink(items[0].video_url)
+    }
+
   }, [idx]);
 
   const handleClick = () => {
@@ -53,6 +59,14 @@ function CourseSectionVideo({
       return true;
     return false;
   };
+
+  const handleShowVideo = (e, item) => {
+    e.stopPropagation();
+    setLink(item.video_url);
+    setOpenDraw(false) ///  tắt draw mobile
+    setTitle(item.title)
+  };
+
   return (
     <Accordion expanded={open} className={styles.accordion}>
       <AccordionSummary
@@ -68,15 +82,21 @@ function CourseSectionVideo({
 
       <AccordionDetails className={styles.accordionDetails}>
         {items.map((item, idx) => {
+          let v = initSelectCheckbox(item.id);
           return (
             <div key={idx} className={styles.lecture}>
               <Checkbox
-                defaultChecked={initSelectCheckbox(item.id)}
+                checked={v} // check xem bài đã học
                 onChange={(e) => handleSelectCheckbox(e, item)}
                 // inputProps={{ "aria-label": "controlled" }}
               />
 
-              <span className={styles.lectureTitle}>{item.title}</span>
+              <span
+                onClick={(e) => handleShowVideo(e, item)}
+                className={styles.lectureTitle}
+              >
+                {item.title}
+              </span>
             </div>
           );
         })}

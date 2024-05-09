@@ -6,8 +6,7 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 
 import img_1 from "../../asset/PygUbq64RIKgIYC52S65_Học Edit video.jpg";
-import nam from "../../asset/nam.png"
-
+import nam from "../../asset/nam.png";
 
 export default function KhoahocHome() {
   return (
@@ -20,7 +19,7 @@ export default function KhoahocHome() {
           alt="green iguana"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="span">
             Chinh Phục Sản Xuất Video Ngắn
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -35,13 +34,13 @@ export default function KhoahocHome() {
               </div>
             </div>
             <p className="mt-2"></p>
-            <span className="text-orange-500 text-2xl font-bold mr-2">9.987.654 đ</span>
+            <span className="text-orange-500 text-2xl font-bold mr-2">
+              9.987.654 đ
+            </span>
             <span className="line-through">12.000.000 đ</span>
-           
           </Typography>
         </CardContent>
       </CardActionArea>
-      
     </Card>
   );
 }

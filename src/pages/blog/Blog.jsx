@@ -1,20 +1,18 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import * as React from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import { Button, CardActionArea, CardActions } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import img_1 from "../../asset/PygUbq64RIKgIYC52S65_Học Edit video.jpg"
-
+import img_1 from "../../asset/PygUbq64RIKgIYC52S65_Học Edit video.jpg";
 
 export default function Blog(props) {
-  const {detail} = props;
+  const { detail } = props;
   const navigate = useNavigate();
 
-
   return (
-    <Card onClick={()=> navigate("/blog/1432")}>
+    <Card onClick={() => navigate("/blog/1432")}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -23,7 +21,7 @@ export default function Blog(props) {
           alt="green iguana"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="span">
             Lizard
           </Typography>
           <Typography variant="body2" color="text.secondary">
@@ -33,9 +31,7 @@ export default function Blog(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small">
-          xem thêm
-        </Button>
+        <Button size="small">xem thêm</Button>
       </CardActions>
     </Card>
   );
