@@ -26,7 +26,7 @@ const khoa_hoc = {
           has_linked_workspace: false,
         },
         {
-          id: 2239862,
+          id: 224234,
           title: "Vạch trần 07 sự thật về ngành bán hàng",
           item_type: "lecture",
           learn_url: "/course/pythonforbeginners/learn/lecture/2239862",
@@ -51,7 +51,7 @@ const khoa_hoc = {
       index: 1,
       items: [
         {
-          id: 2239858,
+          id: 343255,
           title: "Giới thiệu khóa học Chiến thắng những Đòn tâm lý",
           item_type: "lecture",
           learn_url: "/course/pythonforbeginners/learn/lecture/2239858",
@@ -67,7 +67,7 @@ const khoa_hoc = {
           has_linked_workspace: false,
         },
         {
-          id: 2239862,
+          id: 458464,
           title: "Vạch trần 07 sự thật về ngành bán hàng",
           item_type: "lecture",
           learn_url: "/course/pythonforbeginners/learn/lecture/2239862",
@@ -92,7 +92,7 @@ const khoa_hoc = {
       index: 1,
       items: [
         {
-          id: 2239858,
+          id: 98046,
           title: "Giới thiệu khóa học Chiến thắng những Đòn tâm lý",
           item_type: "lecture",
           learn_url: "/course/pythonforbeginners/learn/lecture/2239858",
@@ -108,7 +108,7 @@ const khoa_hoc = {
           has_linked_workspace: false,
         },
         {
-          id: 2239862,
+          id: 867544,
           title: "Vạch trần 07 sự thật về ngành bán hàng",
           item_type: "lecture",
           learn_url: "/course/pythonforbeginners/learn/lecture/2239862",
@@ -133,7 +133,7 @@ const khoa_hoc = {
       index: 1,
       items: [
         {
-          id: 2239858,
+          id: 254245,
           title: "Giới thiệu khóa học Chiến thắng những Đòn tâm lý",
           item_type: "lecture",
           learn_url: "/course/pythonforbeginners/learn/lecture/2239858",
@@ -149,7 +149,7 @@ const khoa_hoc = {
           has_linked_workspace: false,
         },
         {
-          id: 2239862,
+          id: 980567,
           title: "Vạch trần 07 sự thật về ngành bán hàng",
           item_type: "lecture",
           learn_url: "/course/pythonforbeginners/learn/lecture/2239862",
@@ -174,7 +174,7 @@ const khoa_hoc = {
       index: 1,
       items: [
         {
-          id: 2239858,
+          id: 98575,
           title: "Giới thiệu khóa học Chiến thắng những Đòn tâm lý",
           item_type: "lecture",
           learn_url: "/course/pythonforbeginners/learn/lecture/2239858",
@@ -190,7 +190,7 @@ const khoa_hoc = {
           has_linked_workspace: false,
         },
         {
-          id: 2239862,
+          id: 125657,
           title: "Vạch trần 07 sự thật về ngành bán hàng",
           item_type: "lecture",
           learn_url: "/course/pythonforbeginners/learn/lecture/2239862",
@@ -215,7 +215,7 @@ const khoa_hoc = {
       index: 1,
       items: [
         {
-          id: 2239858,
+          id: 1978234,
           title: "Giới thiệu khóa học Chiến thắng những Đòn tâm lý",
           item_type: "lecture",
           learn_url: "/course/pythonforbeginners/learn/lecture/2239858",
@@ -231,7 +231,7 @@ const khoa_hoc = {
           has_linked_workspace: false,
         },
         {
-          id: 2239862,
+          id: 909868,
           title: "Vạch trần 07 sự thật về ngành bán hàng",
           item_type: "lecture",
           learn_url: "/course/pythonforbeginners/learn/lecture/2239862",
@@ -256,7 +256,7 @@ const khoa_hoc = {
       index: 2,
       items: [
         {
-          id: 2239858,
+          id: 134675,
           title: "Nắm vững 07 hoạt động trọng yếu trong bán hàng",
           item_type: "lecture",
           learn_url: "/course/pythonforbeginners/learn/lecture/2239858",
@@ -272,7 +272,7 @@ const khoa_hoc = {
           has_linked_workspace: false,
         },
         {
-          id: 2239862,
+          id: 876867,
           title: "Thông thạo 04 bước tạo nên thành công",
           item_type: "lecture",
           learn_url: "/course/pythonforbeginners/learn/lecture/2239862",
@@ -288,7 +288,7 @@ const khoa_hoc = {
           has_linked_workspace: false,
         },
         {
-          id: 2239862,
+          id: 967974,
           title: "Thấu hiểu 03 tác động của Lòng tự tôn",
           item_type: "lecture",
           learn_url: "/course/pythonforbeginners/learn/lecture/2239862",
@@ -316,8 +316,9 @@ const khoa_hoc = {
   total_time: "10h30p20s",
 };
 
-function MenuVideo({ details, setLink, setShowVideo }) {
+function MenuVideo({ details, setLink, setShowVideo, setTotalChecked, totalChecked }) {
   const [open, toggleOpen] = useState(false);
+ 
   const navigate = useNavigate();
 
   //console.log("detail: ", details);
@@ -331,8 +332,6 @@ function MenuVideo({ details, setLink, setShowVideo }) {
 
   return (
     <div className={styles.contentContainer}>
-      {/* <p className={styles.header}>Video</p> */}
-     
       <section className={styles.beforeContent}></section>
       {/* lặp từng bài học, lấy tất cả bài giảng của bài học */}
       <List>
@@ -344,6 +343,8 @@ function MenuVideo({ details, setLink, setShowVideo }) {
               idx={idx}
               setShowVideo={setShowVideo} // truyền sự kiện click show video
               setLink={setLink}
+              setTotalChecked={setTotalChecked}
+              totalChecked = {totalChecked}
             />
           );
           return (

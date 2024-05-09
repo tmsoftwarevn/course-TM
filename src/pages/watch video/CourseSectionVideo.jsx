@@ -12,19 +12,20 @@ function CourseSectionVideo({
   idx,
   setShowVideo,
   setLink,
+  setTotalChecked,
+  totalChecked,
 }) {
   const [open, toggleOpen] = useState(false);
-  //console.log("detallllll", sectionDetails);
-  const [totalChecked, setTotalChecked] = useState(0);
 
- const handleSelectCheckbox = (e) =>{
-  if(e.target.checked === true){
-    setTotalChecked(+totalChecked + 1);
-  }
-  else{
-    setTotalChecked(+totalChecked - 1);
-  }
- }
+  const handleSelectCheckbox = (e, item) => {
+    if (e.target.checked === true) {
+      let arr = [...totalChecked, item.id]; // lưu id check process %
+      setTotalChecked(arr);
+    } else {
+      const newArr = totalChecked.filter((itemx) => itemx !== item.id);
+      setTotalChecked(newArr);
+    }
+  };
 
   const {
     title,
@@ -45,25 +46,34 @@ function CourseSectionVideo({
     toggleOpen(!open);
   };
 
-  console.log('llll', items)
-
+  const initSelectCheckbox = (id) => {
+    const index = totalChecked.findIndex((item) => item === id);
+    if (index > -1)
+      // nếu local có id thì tick
+      return true;
+    return false;
+  };
   return (
     <Accordion expanded={open} className={styles.accordion}>
       <AccordionSummary
         className={styles.accordionSummary}
         expandIcon={<ExpandMore className={styles.expandIcon} />}
-        onClick={handleClick}
+        onClick={() => handleClick()}
       >
-        <span className={styles.summaryText}>{title}</span>
-        <span className={`${styles.hide}`}>{sectionLectures} Bài</span>
+        <div className="flex justify-between w-full">
+          <span className={styles.summaryText}>{title}</span>
+          <span className={styles.totalSection}>{sectionLectures} Bài</span>
+        </div>
       </AccordionSummary>
+
       <AccordionDetails className={styles.accordionDetails}>
         {items.map((item, idx) => {
           return (
             <div key={idx} className={styles.lecture}>
-              <Checkbox               
-                onChange={(e) =>handleSelectCheckbox(e)}
-                inputProps={{ "aria-label": "controlled" }}
+              <Checkbox
+                defaultChecked={initSelectCheckbox(item.id)}
+                onChange={(e) => handleSelectCheckbox(e, item)}
+                // inputProps={{ "aria-label": "controlled" }}
               />
 
               <span className={styles.lectureTitle}>{item.title}</span>

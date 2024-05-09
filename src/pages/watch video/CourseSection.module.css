@@ -7,6 +7,7 @@
 .accordionSummary {
 	flex-direction: row-reverse;
 	background-color: #f7f9fa !important;
+	
 }
 
 .expandIcon {

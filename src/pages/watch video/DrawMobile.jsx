@@ -1,21 +1,11 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import Button from "@mui/material/Button";
-import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
 import { makeStyles } from "@material-ui/styles";
 import MenuVideo from "./CourseContent";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import ProgressBar from "@ramonak/react-progress-bar";
-
 
 export default function MobileDrawer(props) {
   const [state, setState] = React.useState({
@@ -25,7 +15,7 @@ export default function MobileDrawer(props) {
     right: false,
   });
   const navigate = useNavigate();
-  const {openDraw, setOpenDraw} = props;
+  const {openDraw, setOpenDraw, totalChecked, setTotalChecked, process} = props;
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (
@@ -40,7 +30,7 @@ export default function MobileDrawer(props) {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : "100vw" }}
+      sx={{ width: window.innerWidth > 576 ? "50vw" : "100vw" }} // fix screen
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -59,18 +49,20 @@ export default function MobileDrawer(props) {
           height="5px"
           bgColor="blue"
           customLabel=" "
-          completed={60}
+          completed={process}
           className="pt-3"
         />
-        <p className="pt-2 mb-3">Đã hoàn thành 60%</p>
+        <p className="pt-2 mb-3">Đã hoàn thành {process}%</p>
       </div>
 
-      <MenuVideo />
+      <MenuVideo totalChecked={totalChecked} setTotalChecked={setTotalChecked} />
+
     </Box>
   );
   const useStyles = makeStyles({
     drawerPaper: {
-      marginTop: "65px",
+      // marginTop: "65px",
+      paddingTop: "65px"
     },
   });
   const classes = useStyles();

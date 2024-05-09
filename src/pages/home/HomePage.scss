@@ -218,3 +218,12 @@
         color: var(--color-main);
     }
 }
+
+.blog-home{
+    margin-top: 150px;
+    &__title{
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--color-main);
+    }
+}

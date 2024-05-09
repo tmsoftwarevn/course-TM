@@ -13,9 +13,11 @@ import ttt from "../../asset/7RJ4m1yLRcOZNvyt8bge_banner2.png";
 import SingleKhoahoc from "../khoahoc/SingleKhoahoc";
 import { useNavigate } from "react-router-dom";
 import KhoahocHome from "./KhoahocHome";
+import CarouselKhoahoc from "../../components/carousel-react/CarouselKhoahoc";
+import CarouselBlog from "../../components/carousel-react/CarouselBlog";
 
-const arr = ["1"];
-
+const arr = ["1", "2", "3"];
+const arrBlog = ["1", "2", "3", "4", "5"];
 function HomePage() {
   const navigate = useNavigate();
 
@@ -182,6 +184,28 @@ function HomePage() {
           </div>
         </section>
 
+        <section className="khoahoc-home mb-5 px-2" data-aos="fade-up">
+          <div className="max-w-6xl mx-auto">
+            <div className="khoahoc-home__title text-center mb-3">
+              KHÓA HỌC TM
+            </div>
+            {/* <CarouselKhoahoc arrProp = {arr} /> */}
+            <div className="row">
+              {arr.map((item, idx) => {
+                return (
+                  <>
+                    <div className="col-md-4 mt-4"
+                    onClick={() => navigate("/khoa-hoc/3321")}
+                    >
+                      <KhoahocHome />
+                    </div>
+                  </>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
         <section className="content-654" data-aos="fade-up">
           <div className="max-w-6xl mx-auto">
             <div className="row content-654__group">
@@ -201,7 +225,7 @@ function HomePage() {
           </div>
         </section>
 
-        <section className="content-834" data-aos="fade-up">
+        <section className="content-834 px-2" data-aos="fade-up">
           <div className="max-w-6xl mx-auto">
             <div className="row content-834__group">
               <div className="col-md-6 content-834__group-left">
@@ -246,7 +270,7 @@ function HomePage() {
           </div>
         </section>
 
-        <section className="content-123" data-aos="fade-up">
+        <section className="content-123 " data-aos="fade-up">
           <div className="row content-123__group">
             <div className="col-md-6 img-content-123">
               <img src={chungchi} />
@@ -276,7 +300,7 @@ function HomePage() {
           </div>
         </section>
 
-        <section className="content-957" data-aos="fade-up">
+        <section className="content-957 px-2" data-aos="fade-up">
           <div className="max-w-6xl mx-auto">
             <div className="row content-834__group">
               <div className="col-md-6 content-834__group-left">
@@ -321,22 +345,10 @@ function HomePage() {
           </div>
         </section>
 
-        <section className="khoahoc-home">
+        <section className="blog-home mb-5 px-2" data-aos="fade-up">
           <div className="max-w-6xl mx-auto">
-            <div className="khoahoc-home__title text-center">KHÓA HỌC TM</div>
-            <div className="row">
-              {arr &&
-                arr.map((item, map) => {
-                  return (
-                    <div
-                      className="col-sm-6 col-md-4 mt-4"
-                      onClick={() => navigate("/khoa-hoc/232")}
-                    >
-                      <KhoahocHome />
-                    </div>
-                  );
-                })}
-            </div>
+            <div className="blog-home__title text-center mb-3">BÀI VIẾT</div>
+            <CarouselBlog arrProp={arrBlog} />
           </div>
         </section>
       </div>
