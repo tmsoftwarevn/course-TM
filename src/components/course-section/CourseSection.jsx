@@ -19,7 +19,8 @@ function CourseSection({ ExpandAll, sectionDetails, idx, setShowVideo, setLink }
     content_length: sectionLength,
   } = sectionDetails;
  
-  const handlePreviewVideo = () => {
+  const handlePreviewVideo = (e) => {
+    e.stopPropagation();
     setShowVideo(true);
     //setLink();
   };
@@ -68,7 +69,7 @@ function CourseSection({ ExpandAll, sectionDetails, idx, setShowVideo, setLink }
 
               <span className={styles.lectureTitle}>{item.title}</span>
               {item.can_be_previewed ? (
-                <span onClick={() => handlePreviewVideo()} className={styles.preview}>Xem trước</span>
+                <span onClick={(e) => handlePreviewVideo(e)} className={styles.preview}>Xem trước</span>
               ) : (
                 <span></span>
               )}
