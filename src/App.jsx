@@ -16,6 +16,11 @@ import SearchBlog from "./pages/blog/SearchBlog";
 import Khoahoc from "./pages/khoahoc/Khoahoc";
 import DetailBlog from "./pages/blog/DetailBlog";
 import WatchVideo from "./pages/watch video/WatchVideo";
+import LayoutAdmin from "./pages/layout admin/LayoutAdmin";
+
+import QuanlyBaiviet from "./admin/quan ly bai viet/QuanlyBaiviet";
+import QuanlyKhoahoc from "./admin/khoa hoc/QuanlyKhoahoc";
+import DetailKhoahoc from "./admin/detail khoa hoc/DetailKhoahoc";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -50,6 +55,24 @@ const App = () => {
             element: <Lienhe />,
           },
         ],
+      },
+      {
+        path: "/admin",
+        element: <LayoutAdmin />,
+        children:[
+          {
+            path: "khoa-hoc",
+            element: <QuanlyKhoahoc />,
+          },
+          {
+            path: "bai-viet",
+            element: <QuanlyBaiviet />
+          },
+          {
+            path: "detail-khoa-hoc",
+            element: <DetailKhoahoc />
+          }
+        ]
       },
       {
         path: "/login",
