@@ -175,7 +175,7 @@ const UpdateKhoahoc = (props) => {
         onCancel={handleCancel}
         maskClosable={false}
         forceRender
-        width={1200}
+        width={1000}
       >
         <div>
           <Row gutter={16}>

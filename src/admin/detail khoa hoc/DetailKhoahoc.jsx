@@ -1,7 +1,10 @@
+import CourseContent from "../component/course-content-admin/CourseContent";
+import "./DetailKhoahoc.scss";
+
 const DetailKhoahoc = () =>{
     return(
-        <div>
-
+        <div className="detail-khoahoc-admin">
+            <CourseContent />
         </div>
     )
 }

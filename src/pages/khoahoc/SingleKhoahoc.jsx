@@ -23,7 +23,7 @@ export default function SingleKhoahoc() {
             Chinh Phục Sản Xuất Video Ngắn
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            <div className="g-parent flex items-center gap-5 justify-between">
+            <div className="g-parent flex items-center gap-5 justify-between mt-2">
               <div className="g-icon flex items-center text-blue-600">
                 <span className="fa-regular fa-clock"></span>
                 <p className="ml-1">10 giờ 25 phút</p>

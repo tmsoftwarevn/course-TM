@@ -21,6 +21,8 @@ import LayoutAdmin from "./pages/layout admin/LayoutAdmin";
 import QuanlyBaiviet from "./admin/quan ly bai viet/QuanlyBaiviet";
 import QuanlyKhoahoc from "./admin/khoa hoc/QuanlyKhoahoc";
 import DetailKhoahoc from "./admin/detail khoa hoc/DetailKhoahoc";
+import QuanliHocvien from "./admin/component/hoc vien/QuanliHocvien";
+import QuanliLienhe from "./admin/quan ly lien he/QuanliLienhe";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -34,6 +36,7 @@ const App = () => {
             path: "khoa-hoc",
             element: <Khoahoc />,
           },
+          
           {
             path: "khoa-hoc/:courseId",
             element: <SingleCoursePage />,
@@ -59,20 +62,32 @@ const App = () => {
       {
         path: "/admin",
         element: <LayoutAdmin />,
-        children:[
+        children: [
           {
             path: "khoa-hoc",
             element: <QuanlyKhoahoc />,
           },
           {
+            path: "hoc-vien",
+            element: <QuanliHocvien />,
+          },
+          {
+            path: "lien-he",
+            element: <QuanliLienhe />,
+          },
+          {
+            path: "khoa-hoc/:id",
+            element: <DetailKhoahoc />,
+          },
+          {
             path: "bai-viet",
-            element: <QuanlyBaiviet />
+            element: <QuanlyBaiviet />,
           },
           {
             path: "detail-khoa-hoc",
-            element: <DetailKhoahoc />
-          }
-        ]
+            element: <DetailKhoahoc />,
+          },
+        ],
       },
       {
         path: "/login",
@@ -84,8 +99,8 @@ const App = () => {
       },
       {
         path: "/video",
-        element: <WatchVideo />
-      }
+        element: <WatchVideo />,
+      },
     ]
     // {
     //   basename: "/deploy_FE_TM_Media",

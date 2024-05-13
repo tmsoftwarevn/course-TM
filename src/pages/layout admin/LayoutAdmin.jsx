@@ -7,7 +7,7 @@ import {
   UserOutlined,
 } from "@ant-design/icons";
 import { Breadcrumb, Button, Flex, Layout, Menu, theme } from "antd";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 const { Header, Content, Footer, Sider } = Layout;
 
 function getItem(label, key, icon, children) {
@@ -27,15 +27,31 @@ const LayoutAdmin = () => {
   } = theme.useToken();
   const items = [
     getItem(
+      <div onClick={() => navigate(`/admin/lien-he`)}>Liên hệ</div>,
+      "9832",
+      <DesktopOutlined />
+    ),
+    getItem(
+      <div onClick={() => navigate(`/admin/hoc-vien`)}>Học viên</div>,
+      "98",
+      <DesktopOutlined />
+    ),
+    getItem(
+      <div onClick={() => navigate(`/admin/bai-viet`)}>Bài viết</div>,
+      "3",
+      <DesktopOutlined />
+    ),
+    getItem(
       <div onClick={() => navigate(`/admin/khoa-hoc`)}>Khóa học</div>,
       "2",
       <DesktopOutlined />
     ),
-    getItem(
-        <div onClick={() => navigate(`/admin/bai-viet`)}>Bài viết</div>,
-        "3",
-        <DesktopOutlined />
-      ),
+    
+    getItem("Chi tiết khóa học", "sub1", <DesktopOutlined />, [
+      getItem(<Link to="/admin/khoa-hoc/1">Khoa hoc 1</Link>, "menu1"),
+      getItem(<Link to="/admin/khoa-hoc/2">Khoa hoc 2</Link>, "menu2"),
+      getItem(<Link to="/admin/khoa-hoc/3">Khoa hoc 3</Link>, "menu3"),
+    ]),
   ];
   return (
     <Layout
