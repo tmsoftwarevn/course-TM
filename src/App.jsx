@@ -23,6 +23,8 @@ import QuanlyKhoahoc from "./admin/khoa hoc/QuanlyKhoahoc";
 import DetailKhoahoc from "./admin/detail khoa hoc/DetailKhoahoc";
 import QuanliHocvien from "./admin/component/hoc vien/QuanliHocvien";
 import QuanliLienhe from "./admin/quan ly lien he/QuanliLienhe";
+import Account from "./pages/account/Account";
+import Info from "./pages/account/Info";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -57,6 +59,16 @@ const App = () => {
             path: "lien-he",
             element: <Lienhe />,
           },
+          {
+            path: "account",
+            element: <Account />,
+            children: [
+              {
+                path: "ho-so",
+                element: <Info />,
+              },
+            ]
+          }
         ],
       },
       {
@@ -98,7 +110,7 @@ const App = () => {
         element: <SignUp />,
       },
       {
-        path: "/video",
+        path: "/video/:id",
         element: <WatchVideo />,
       },
     ]

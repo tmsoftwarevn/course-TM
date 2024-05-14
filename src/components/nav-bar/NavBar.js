@@ -3,18 +3,36 @@ import "./NavBar.scss";
 import SearchBar from "../search-bar/SearchBar";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../asset/logo.png";
+import { useDispatch, useSelector } from "react-redux";
+import Avatar from "@mui/material/Avatar";
+import Stack from "@mui/material/Stack";
+import { doLogoutAction } from "../../redux/account/accountSlice";
 
 function NavBar() {
   const navigate = useNavigate();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isAuthenticated = useSelector((state) => state.account.isAuthenticated);
+  const dispatch = useDispatch();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  const handleLogout = async () => {
+    // const res = await callLogout(idUser);
+    // if (res && res.data) {
+    //   dispatch(doLogoutAction());
+    //   dispatch(doRemoveCartLogout());
+    // }
+    dispatch(doLogoutAction());
+    navigate('/login', {state: {isLogout: true}})
+
+  };
+
   return (
     <>
       <header className="bg-white sticky top-0 left-0 w-full z-50 shadow">
-        <div className="mx-auto max-w-6xl px-3">
+        <div className="mx-auto max-w-6xl ">
           <div className="flex items-center justify-between h-16 w-full">
             <div className="left flex align-items-center col-md-9">
               <div
@@ -49,21 +67,44 @@ function NavBar() {
               </div>
             </div>
 
-            <div className="right hidden lg:flex space-x-4 col-md-3 justify-end">
-              <div
-                className="text-white px-3 py-2 rounded bg-blue-500 hover:bg-blue-600 cursor-pointer"
-                onClick={() => navigate("/login")}
-              >
-                Đăng nhập
+            {isAuthenticated ? (
+              <div className="group-login lg:block">
+                <Stack>
+                  <Avatar src="/broken-image.jpg" />
+                </Stack>
+                <div className="box">
+                  <div className="flex items-center info py-2 px-3">
+                    <Stack>
+                      <Avatar src="/broken-image.jpg" />
+                    </Stack>
+                    <span className="ml-3">test@gmail.com</span>
+                  </div>
+                  <div className="p-3 leading-loose">
+                    <p className="cursor-pointer hover:text-blue-600">Khóa học</p>
+                    <p className="cursor-pointer hover:text-blue-600">Hồ sơ</p>
+                    <p className="cursor-pointer hover:text-blue-600" onClick={()=>navigate("/account")}>Cài đặt</p>
+                    <p className="cursor-pointer hover:text-blue-600"
+                    onClick={() => handleLogout()}
+                    >Đăng xuất</p>
+                  </div>
+                </div>
               </div>
-              <div
-                className="text-white px-3 py-2 rounded bg-blue-500 hover:bg-blue-600 cursor-pointer"
-                onClick={() => navigate("/dang-ky")}
-              >
-                Đăng ký
+            ) : (
+              <div className="right hidden lg:flex space-x-4 col-md-3 justify-end">
+                <div
+                  className="text-white px-3 py-2 rounded bg-blue-500 hover:bg-blue-600 cursor-pointer"
+                  onClick={() => navigate("/login")}
+                >
+                  Đăng nhập
+                </div>
+                <div
+                  className="text-white px-3 py-2 rounded bg-blue-500 hover:bg-blue-600 cursor-pointer"
+                  onClick={() => navigate("/dang-ky")}
+                >
+                  Đăng ký
+                </div>
               </div>
-            </div>
-
+            )}
             {/* // btn toggle */}
             <div className="lg:hidden">
               <button
@@ -123,20 +164,24 @@ function NavBar() {
             <div className="px-4 w-full">
               <SearchBar />
             </div>
-            <div className="flex space-x-4 px-4 py-3">
-              <div
-                className="text-blue-500 px-3 py-2 rounded bg-white cursor-pointer"
-                onClick={() => navigate("/login")}
-              >
-                Đăng nhập
+            {isAuthenticated ? (
+              <div className="py-3"></div>
+            ) : (
+              <div className="flex space-x-4 px-4 py-3">
+                <div
+                  className="text-blue-500 px-3 py-2 rounded bg-white cursor-pointer"
+                  onClick={() => navigate("/login")}
+                >
+                  Đăng nhập
+                </div>
+                <div
+                  className="text-blue-500 px-3 py-2 rounded bg-white cursor-pointer"
+                  onClick={() => navigate("/dang-ky")}
+                >
+                  Đăng ký
+                </div>
               </div>
-              <div
-                className="text-blue-500 px-3 py-2 rounded bg-white cursor-pointer"
-                onClick={() => navigate("/dang-ky")}
-              >
-                Đăng ký
-              </div>
-            </div>
+            )}
           </div>
         )}
       </header>

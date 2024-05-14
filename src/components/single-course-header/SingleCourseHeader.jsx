@@ -24,7 +24,7 @@ function SingleCourseHeader({ courseDetails, additionalDetails }) {
               <p className={styles.subCategory}>Trang chủ</p>
             </Link>
             <i className="fa-solid fa-chevron-right sub-category-arrow"></i>
-            <Link to="/ahmedGamal-Project2React#courses">
+            <Link to="/khoa-hoc">
               <p className={styles.subCategory}>Khóa học</p>
             </Link>
           </section>

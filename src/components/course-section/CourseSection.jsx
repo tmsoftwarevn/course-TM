@@ -5,12 +5,19 @@ import { useEffect } from "react";
 import { useState } from "react";
 import styles from "./CourseSection.module.css";
 import { useNavigate } from "react-router-dom";
-import Checkbox from '@mui/material/Checkbox';
+import Checkbox from "@mui/material/Checkbox";
+import { useSelector } from "react-redux";
 
-function CourseSection({ ExpandAll, sectionDetails, idx, setShowVideo, setLink }) {
+function CourseSection({
+  ExpandAll,
+  sectionDetails,
+  idx,
+  setShowVideo,
+  setLink,
+}) {
   const [open, toggleOpen] = useState(false);
   const navigate = useNavigate();
-
+  const isAuthenticated = useSelector((state) => state.account.isAuthenticated);
   //console.log("detallllll", sectionDetails);
   const {
     title,
@@ -18,7 +25,7 @@ function CourseSection({ ExpandAll, sectionDetails, idx, setShowVideo, setLink }
     lecture_count: sectionLectures,
     content_length: sectionLength,
   } = sectionDetails;
- 
+
   const handlePreviewVideo = (e) => {
     e.stopPropagation();
     setShowVideo(true);
@@ -36,7 +43,14 @@ function CourseSection({ ExpandAll, sectionDetails, idx, setShowVideo, setLink }
   const handleClick = () => {
     toggleOpen(!open);
   };
-
+  const check_active_cource = () => {
+    if (isAuthenticated) {
+      navigate("/video/1");
+    }
+    else{
+      navigate("/khoa-hoc/2");
+    }
+  };
   return (
     <Accordion expanded={open} className={styles.accordion}>
       <AccordionSummary
@@ -56,7 +70,7 @@ function CourseSection({ ExpandAll, sectionDetails, idx, setShowVideo, setLink }
             <div
               key={idx}
               className={styles.lecture}
-              onClick={() => navigate("/video")}
+              onClick={() => check_active_cource()}
             >
               <span
                 className={
@@ -69,12 +83,16 @@ function CourseSection({ ExpandAll, sectionDetails, idx, setShowVideo, setLink }
 
               <span className={styles.lectureTitle}>{item.title}</span>
               {item.can_be_previewed ? (
-                <span onClick={(e) => handlePreviewVideo(e)} className={styles.preview}>Xem trước</span>
+                <span
+                  onClick={(e) => handlePreviewVideo(e)}
+                  className={styles.preview}
+                >
+                  Xem trước
+                </span>
               ) : (
                 <span></span>
               )}
               <span className={styles.hide}>{item.content_summary}</span>
-
             </div>
           );
         })}

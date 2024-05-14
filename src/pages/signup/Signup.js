@@ -14,6 +14,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import HomeIcon from '@mui/icons-material/Home';
+import { useEffect } from "react";
 // TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
@@ -21,6 +22,10 @@ const defaultTheme = createTheme();
 export default function SignUp() {
   const refForm = React.useRef();
   const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   if (localStorage.getItem("access_token")) return navigate("/");
+  // }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -52,6 +57,7 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Đăng ký
           </Typography>
+          
           <Box
             component="form"
             noValidate={false}
@@ -124,6 +130,7 @@ export default function SignUp() {
               </Grid>
             </Grid>
           </Box>
+
         </Box>
       </Container>
     </ThemeProvider>

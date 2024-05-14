@@ -15,7 +15,7 @@ const WatchVideo = () => {
   const [openDraw, setOpenDraw] = useState(false);
   const [process, setProcess] = useState(0);
   const [link, setLink] = useState("");
-  const [title,setTitle] = useState();
+  const [title, setTitle] = useState();
 
   const [totalChecked, setTotalChecked] = useState(
     localStorage.getItem("processStudy")
@@ -90,9 +90,7 @@ const WatchVideo = () => {
           </div>
 
           <div className="right-video col-xl-9 mt-2">
-            <div className="name-baihoc">
-              {title}
-            </div>
+            <div className="name-baihoc">{title}</div>
             {/* <video controls crossorigin="anonymous">
               <source
                 src= {link}
@@ -106,6 +104,15 @@ const WatchVideo = () => {
               controls={true}
               url={link}
             />
+
+            <div className="flex justify-between px-3">
+              <button className="mt-3 px-3 py-1 text-white bg-blue-400 hover:bg-blue-600 rounded">
+                Trước
+              </button>
+              <button className="mt-3 px-3 py-1 text-white bg-blue-400 hover:bg-blue-600 rounded">
+                Tiếp
+              </button>
+            </div>
           </div>
         </div>
 
