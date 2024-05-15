@@ -1,30 +1,27 @@
-import "./info.scss";
+import "./Baomat.scss";
 import { Link, useNavigate } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
-const Info = () => {
-  const [name, setName] = useState("fdff");
+const Baomat = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-      fullName: data.get("fullName"),
-      phone: data.get("phone"),
-      cf_password: data.get("confirm-password"),
+      pass_new: data.get("pass_new"),
+      pass_old: data.get("pass_old"),
+      confirm_pass_new: data.get("confirm_pass_new"),
     });
   };
   return (
-    <div className="info">
-      <div className="info_title font-semibold" style={{ padding: "20px" }}>
-        Thông tin
+    <div className="baomat">
+      <div className="baomat_title font-semibold" style={{ padding: "20px" }}>
+        Bảo mật
       </div>
-      <div className="info_content">
+      <div className="baomat_content">
         <Box
           component="form"
           noValidate={false}
@@ -34,32 +31,32 @@ const Info = () => {
           <Grid container spacing={2}>
             <Grid item xs={12} sm={12}>
               <TextField
-                name="fullName"
+                name="pass_old"
                 required
                 fullWidth
-                id="fullname"
-                label="Họ và tên"
-                defaultValue={name}
+                id="pass_old"
+                label="Mật khẩu cũ"
+                
               />
             </Grid>
             <Grid item xs={12} sm={12}>
               <TextField
                 required
                 fullWidth
-                id="lastName"
-                label="Số điện thoại"
-                name="phone"
+                id="pass_new"
+                label="Mật khẩu mới"
+                name="pass_new"
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
                 required
                 fullWidth
-                id="email"
-                label="Email"
-                name="email"
-                defaultValue={"fdsfdsf"}
-                disabled
+                id="confirm_pass_new"
+                label="Xác nhận mật khẩu mới"
+                name="confirm_pass_new"
+               
+                
               />
             </Grid>
           </Grid>
@@ -77,4 +74,4 @@ const Info = () => {
   );
 };
 
-export default Info;
+export default Baomat;

@@ -1,7 +1,18 @@
 // color-main: #3b82f6
 @import "../../scss/responsive.scss";
 
-header{
+.left{
+    @include xs{
+        padding: 0 20px;
+    }
+    @include sm{
+        padding: 0 20px;
+    }
+    @include xl{
+        padding: 0;
+    }
+}
+.toggle{
     @include xs{
         padding: 0 20px;
     }

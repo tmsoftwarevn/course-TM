@@ -25,8 +25,7 @@ function NavBar() {
     //   dispatch(doRemoveCartLogout());
     // }
     dispatch(doLogoutAction());
-    navigate('/login', {state: {isLogout: true}})
-
+    navigate("/login", { state: { isLogout: true } });
   };
 
   return (
@@ -68,7 +67,7 @@ function NavBar() {
             </div>
 
             {isAuthenticated ? (
-              <div className="group-login lg:block">
+              <div className="group-login hidden lg:block">
                 <Stack>
                   <Avatar src="/broken-image.jpg" />
                 </Stack>
@@ -80,12 +79,28 @@ function NavBar() {
                     <span className="ml-3">test@gmail.com</span>
                   </div>
                   <div className="p-3 leading-loose">
-                    <p className="cursor-pointer hover:text-blue-600">Khóa học</p>
-                    <p className="cursor-pointer hover:text-blue-600">Hồ sơ</p>
-                    <p className="cursor-pointer hover:text-blue-600" onClick={()=>navigate("/account")}>Cài đặt</p>
-                    <p className="cursor-pointer hover:text-blue-600"
-                    onClick={() => handleLogout()}
-                    >Đăng xuất</p>
+                    <p
+                      className="cursor-pointer hover:text-blue-600"
+                      onClick={() => {
+                        navigate("/account/khoa-hoc");
+                      }}
+                    >
+                      Khóa học
+                    </p>
+                    <p
+                      className="cursor-pointer hover:text-blue-600"
+                      onClick={() => {
+                        navigate("/account/thong-tin");
+                      }}
+                    >
+                      Thông tin
+                    </p>
+                    <p
+                      className="cursor-pointer hover:text-blue-600"
+                      onClick={() => handleLogout()}
+                    >
+                      Đăng xuất
+                    </p>
                   </div>
                 </div>
               </div>
@@ -93,20 +108,24 @@ function NavBar() {
               <div className="right hidden lg:flex space-x-4 col-md-3 justify-end">
                 <div
                   className="text-white px-3 py-2 rounded bg-blue-500 hover:bg-blue-600 cursor-pointer"
-                  onClick={() => navigate("/login")}
+                  onClick={() => {
+                    navigate("/login");
+                  }}
                 >
                   Đăng nhập
                 </div>
                 <div
                   className="text-white px-3 py-2 rounded bg-blue-500 hover:bg-blue-600 cursor-pointer"
-                  onClick={() => navigate("/dang-ky")}
+                  onClick={() => {
+                    navigate("/dang-ky");
+                  }}
                 >
                   Đăng ký
                 </div>
               </div>
             )}
             {/* // btn toggle */}
-            <div className="lg:hidden">
+            <div className="lg:hidden toggle">
               <button
                 onClick={toggleMobileMenu}
                 className="text-black hover:text-white focus:outline-none"
@@ -142,21 +161,28 @@ function NavBar() {
             <div className="px-2 pt-2 pb-3 space-y-1">
               <div
                 className="cursor-pointer text-white hover:text-white block px-3 py-2"
-                onClick={() => navigate("/khoa-hoc")}
+                onClick={() => {
+                  navigate("/khoa-hoc");
+                  toggleMobileMenu();
+                }}
               >
                 Khóa học
               </div>
               <div
-                href="#"
                 className="cursor-pointer text-white hover:text-white block px-3 py-2"
-                onClick={() => navigate("/blog")}
+                onClick={() => {
+                  navigate("/blog");
+                  toggleMobileMenu();
+                }}
               >
                 Blog
               </div>
               <div
-                href="#"
                 className="cursor-pointer text-white hover:text-white block px-3 py-2"
-                onClick={() => navigate("/lien-he")}
+                onClick={() => {
+                  navigate("/lien-he");
+                  toggleMobileMenu();
+                }}
               >
                 Liên hệ
               </div>
@@ -165,18 +191,34 @@ function NavBar() {
               <SearchBar />
             </div>
             {isAuthenticated ? (
-              <div className="py-3"></div>
+              <div
+                className="py-3 px-4"
+                onClick={() => {
+                  navigate("/account/khoa-hoc");
+                  toggleMobileMenu();
+                }}
+              >
+                <Stack>
+                  <Avatar src="/broken-image.jpg" />
+                </Stack>
+              </div>
             ) : (
               <div className="flex space-x-4 px-4 py-3">
                 <div
                   className="text-blue-500 px-3 py-2 rounded bg-white cursor-pointer"
-                  onClick={() => navigate("/login")}
+                  onClick={() => {
+                    navigate("/login");
+                    toggleMobileMenu();
+                  }}
                 >
                   Đăng nhập
                 </div>
                 <div
                   className="text-blue-500 px-3 py-2 rounded bg-white cursor-pointer"
-                  onClick={() => navigate("/dang-ky")}
+                  onClick={() => {
+                    navigate("/dang-ky");
+                    toggleMobileMenu();
+                  }}
                 >
                   Đăng ký
                 </div>

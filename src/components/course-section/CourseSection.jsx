@@ -44,12 +44,13 @@ function CourseSection({
     toggleOpen(!open);
   };
   const check_active_cource = () => {
-    if (isAuthenticated) {
-      navigate("/video/1");
-    }
-    else{
-      navigate("/khoa-hoc/2");
-    }
+    navigate("/video/1");
+    // if (isAuthenticated) {
+    //   navigate("/video/1");
+    // }
+    // else{
+    //   navigate("/khoa-hoc/2");
+    // }
   };
   return (
     <Accordion expanded={open} className={styles.accordion}>

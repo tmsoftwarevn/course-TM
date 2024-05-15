@@ -25,6 +25,8 @@ import QuanliHocvien from "./admin/component/hoc vien/QuanliHocvien";
 import QuanliLienhe from "./admin/quan ly lien he/QuanliLienhe";
 import Account from "./pages/account/Account";
 import Info from "./pages/account/Info";
+import Baomat from "./pages/account/Baomat";
+import KhoahocActive from "./pages/account/Khoahoc";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -64,8 +66,16 @@ const App = () => {
             element: <Account />,
             children: [
               {
-                path: "ho-so",
+                path: "thong-tin",
                 element: <Info />,
+              },
+              {
+                path: "bao-mat",
+                element: <Baomat />,
+              },
+              {
+                path: "khoa-hoc",
+                element: <KhoahocActive />,
               },
             ]
           }

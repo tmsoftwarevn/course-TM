@@ -19,7 +19,7 @@ const AlertSuccess = (props) => {
     <>
       <Snackbar
         open={open}
-        autoHideDuration={4000}
+        autoHideDuration={2000}
         onClose={handleClose}
         anchorOrigin={{ vertical, horizontal }}
       >

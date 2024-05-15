@@ -22,7 +22,7 @@ const Footer = () => {
     <footer className="footer px-2">
       <div className="mx-auto max-w-6xl">
         <div className="row w-full">
-          <div class="footer-col col-md-3">
+          <div class="footer-col col-sm-6 col-md-3">
             <h4>Liên hệ</h4>
             <ul className="ul-ft">
               <li>
@@ -122,7 +122,7 @@ const Footer = () => {
               </div>
             </div> */}
           </div>
-          <div class="footer-col col-md-3">
+          <div class="footer-col col-sm-6 col-md-3">
             <h4>Khóa học</h4>
             <ul className="ul-ft">
               {menu_video.map((item, index) => {
@@ -135,7 +135,7 @@ const Footer = () => {
               })}
             </ul>
           </div>
-          <div class="footer-col col-md-3">
+          <div class="footer-col col-sm-6 col-md-3">
             <h4>Blog</h4>
             <ul className="ul-ft">
               {menu_chupanh.map((item, index) => {
@@ -148,7 +148,7 @@ const Footer = () => {
               })}
             </ul>
           </div>
-          <div class="footer-col col-md-3">
+          <div class="footer-col col-sm-6 col-md-3">
             <h4>Mạng xã hội</h4>
             <div className="center-icon">
               <div
