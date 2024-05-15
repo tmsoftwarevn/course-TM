@@ -81,7 +81,8 @@ const LayoutAdmin = () => {
           }}
         >
           <Flex justify="end" className="m-3">
-            <Button type="primary">Đổi mật khẩu</Button>
+            <Button type="primary"
+            onClick={()=> navigate("/admin/doi-mat-khau")}>Đổi mật khẩu</Button>
           </Flex>
         </Header>
         <Content

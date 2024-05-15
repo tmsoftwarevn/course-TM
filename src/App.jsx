@@ -27,6 +27,7 @@ import Account from "./pages/account/Account";
 import Info from "./pages/account/Info";
 import Baomat from "./pages/account/Baomat";
 import KhoahocActive from "./pages/account/Khoahoc";
+import Doimatkhau from "./admin/component/doi-mat-khau/Doimatkhau";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -88,6 +89,10 @@ const App = () => {
           {
             path: "khoa-hoc",
             element: <QuanlyKhoahoc />,
+          },
+          {
+            path: "doi-mat-khau",
+            element: <Doimatkhau />,
           },
           {
             path: "hoc-vien",

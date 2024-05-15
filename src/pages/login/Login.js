@@ -19,6 +19,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { doLoginAction } from "../../redux/account/accountSlice";
 import AlertSuccess from "../../alert/AlertSuccess";
+import "./login.scss";
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
@@ -66,7 +67,7 @@ export default function SignIn() {
   };
 
   return (
-    <>
+    <div className="login">
       <ThemeProvider theme={defaultTheme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
@@ -111,10 +112,10 @@ export default function SignIn() {
                 type="password"
                 id="password"
               />
-              <FormControlLabel
+              {/* <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
                 label="Ghi nhớ"
-              />
+              /> */}
               <Button
                 type="submit"
                 fullWidth
@@ -144,6 +145,6 @@ export default function SignIn() {
 
       {isLogout && <AlertSuccess mess={mess} isLogout = {isLogout} />}
 
-    </>
+    </div>
   );
 }
