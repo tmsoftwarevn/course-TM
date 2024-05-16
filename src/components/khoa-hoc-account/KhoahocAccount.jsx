@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 
-import img_1 from "../../asset/PygUbq64RIKgIYC52S65_Học Edit video.jpg";
+import img_1 from "../../asset/thiet ke ui.jpg";
 import nam from "../../asset/nam.png";
 import ProgressBar from "@ramonak/react-progress-bar";
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./StickyCardContent.scss";
 import ThisCourseIncludes from "../this-course-includes/ThisCourseIncludes";
 import { useEffect } from "react";
-import img_test from "../../asset/8aNM4sL6S0infZfko3G2_Thực hành UI_UX.jpg";
+import img_test from "../../asset/thiet ke ui.jpg";
 
 function StickyCardContent({
   details,

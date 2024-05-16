@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 
-import img_1 from "../../asset/PygUbq64RIKgIYC52S65_Học Edit video.jpg";
+import img_1 from "../../asset/hoc edit.jpg";
 import nam from "../../asset/nam.png";
 
 export default function SingleKhoahoc() {

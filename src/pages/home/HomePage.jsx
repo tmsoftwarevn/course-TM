@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./HomePage.scss";
 import img from "../../asset/7RJ4m1yLRcOZNvyt8bge_banner2.png";
-import img2 from "../../asset/8aNM4sL6S0infZfko3G2_Thực hành UI_UX.jpg";
+import img2 from "../../asset/thiet ke ui.jpg";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import khoitao from "../../asset/khoi-tao-image.png";
