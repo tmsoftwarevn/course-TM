@@ -22,7 +22,7 @@ const Footer = () => {
     <footer className="footer px-2">
       <div className="mx-auto max-w-6xl">
         <div className="row w-full">
-          <div class="footer-col col-sm-6 col-md-3">
+          <div class="footer-col  col-md-4">
             <h4>Liên hệ</h4>
             <ul className="ul-ft">
               <li>
@@ -84,45 +84,8 @@ const Footer = () => {
                 tmbranding.vn
               </li>
             </ul>
-
-            {/* /// */}
-            {/* <div className="center-icon">
-              <div
-                className="g-fb"
-                onClick={() =>
-                  window.open(process.env.REACT_APP_LINK_FACEBOOK, "_blank")
-                }
-              >
-                <FaFacebookF className="fb" />
-              </div>
-
-              <div
-                className="g-fb"
-                onClick={() =>
-                  window.open(process.env.REACT_APP_LINK_YOUTUBE, "_blank")
-                }
-              >
-                <FaYoutube className="yt" />
-              </div>
-              <div
-                className="g-fb"
-                onClick={() =>
-                  window.open(process.env.REACT_APP_LINK_TIKTOK, "_blank")
-                }
-              >
-                <FaTiktok className="tiktok" />
-              </div>
-              <div
-                className="g-fb"
-                onClick={() =>
-                  window.open(process.env.REACT_APP_URL_ZALO, "_blank")
-                }
-              >
-                <SiZalo className="zalo" />
-              </div>
-            </div> */}
           </div>
-          <div class="footer-col col-sm-6 col-md-3">
+          <div class="footer-col  col-md-4">
             <h4>Khóa học</h4>
             <ul className="ul-ft">
               {menu_video.map((item, index) => {
@@ -135,20 +98,8 @@ const Footer = () => {
               })}
             </ul>
           </div>
-          <div class="footer-col col-sm-6 col-md-3">
-            <h4>Blog</h4>
-            <ul className="ul-ft">
-              {menu_chupanh.map((item, index) => {
-                return (
-                  <li key={item.id}>
-                    <MdKeyboardArrowRight />
-                    {item.name}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <div class="footer-col col-sm-6 col-md-3">
+
+          <div class="footer-col  col-md-4">
             <h4>Mạng xã hội</h4>
             <div className="center-icon">
               <div

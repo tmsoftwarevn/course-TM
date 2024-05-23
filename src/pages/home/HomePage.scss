@@ -1,3 +1,5 @@
+@import "../../scss/responsive.scss";
+
 :root {
     --color-main: #2563eb;
 }
@@ -6,17 +8,34 @@
     background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(37, 99, 235, 1) 31%, rgba(37, 99, 235, 1) 99%);
 }
 
+@keyframes share_pulse-border__yRpCG {
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+        opacity: 0;
+    }
+}
 .banner {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    padding: 40px;
+    @include xs{
+        padding: 20px 10px;
+    }
     &__content {
         &-heading {
             color: white;
             font-weight: 600;
             font-size: 34px;
             margin-bottom: 10px;
+            @include xs{
+                text-align: center;
+            }
         }
         &-description {
         }
@@ -27,6 +46,9 @@
             font-size: 18px;
             line-height: 2.5;
             font-weight: 600;
+            @include xs{
+                line-height: 1.5;
+            }
             .bi {
                 margin-right: 8px;
             }
@@ -34,9 +56,67 @@
     }
     &__image {
         width: 100%;
-        padding: 40px;
+        position: relative;
+        margin-top: 20px !important;
         img {
             width: 100%;
+        }
+
+        .video-play-button {
+            cursor: pointer;
+            position: absolute;
+            z-index: 10;
+            top: 50%;
+            left: 50%;
+            display: block;
+            box-sizing: content-box;
+            width: 2rem;
+            height: 2.75rem;
+            padding: 1.125rem 1.25rem 1.125rem 1.75rem;
+            border-radius: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                display: block;
+                border-radius: 50%;
+                background: #ffbd50;
+                transform: translateX(-50%) translateY(-50%);
+
+                z-index: 0;
+                width: 4.75rem;
+                height: 4.75rem;
+                animation: share_pulse-border__yRpCG 1.5s ease-out infinite;
+            }
+            &::after {
+                z-index: 1;
+                width: 4.375rem;
+                height: 4.375rem;
+                transition: all 0.2s;
+
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                display: block;
+                border-radius: 50%;
+                background: #ffbd50;
+                transform: translateX(-50%) translateY(-50%);
+            }
+            span {
+                position: relative;
+                display: block;
+                z-index: 3;
+                top: 0.375rem;
+                left: 0.25rem;
+                width: 0;
+                height: 0;
+                border-left: 1.625rem solid #fff;
+                border-top: 1rem solid transparent;
+                border-bottom: 1rem solid transparent;
+            }
         }
     }
 }
@@ -83,7 +163,7 @@
 }
 
 .content-654 {
-    margin-top: 150px;
+    margin-top: 80px;
     height: 300px;
     &__group {
         background: linear-gradient(180deg, rgb(18, 165, 244) 0%, rgba(18, 165, 244, 0.5) 100%);
@@ -101,22 +181,31 @@
             }
         }
     }
-    
+
     &__title {
         font-weight: 600;
         font-size: 24px;
         color: white;
+        @include xs{
+            text-align: center;
+        }
     }
 
     &__mota {
         margin-top: 10px;
         color: white;
+        @include xs{
+            text-align: center;
+        }
     }
 
     &__button {
         margin-top: 10px;
         color: white;
         background-color: var(--color-main);
+        @include xs{
+            margin: 10px auto;
+        }
         cursor: pointer;
         &:hover {
             background-color: #0b54f2;
@@ -125,18 +214,23 @@
 }
 
 .content-834 {
-    margin-top: 150px;
+    margin-top: 100px;
+    @include xs{
+        margin-top: 240px;
+    }
     &__group {
-        
         &-left {
-            &-title{
+            &-title {
                 color: var(--color-main);
                 font-size: 24px;
                 font-weight: 600;
+                @include xs{
+                    text-align: center;
+                }
             }
-            &-content{
+            &-content {
                 margin-top: 20px;
-                &-description{
+                &-description {
                     display: flex;
                     align-items: center;
                     margin-top: 5px;
@@ -144,22 +238,26 @@
             }
         }
         &-right {
-            img{
+            img {
                 width: 100%;
             }
         }
     }
 }
 
-
 .content-123 {
-    margin-top: 150px;
-   
+    margin-top: 100px;
+
     &__group {
-        background: linear-gradient(90deg, rgba(255,147,85,1) 0%, rgba(249,160,82,0.8856792717086834) 37%, rgba(255,147,85,1) 81%);        align-items: center;
+        background: linear-gradient(
+            90deg,
+            rgba(255, 147, 85, 1) 0%,
+            rgba(249, 160, 82, 0.8856792717086834) 37%,
+            rgba(255, 147, 85, 1) 81%
+        );
+        align-items: center;
         justify-content: center;
         .img-content-123 {
-          
             img {
                 height: 100%;
                 width: auto;
@@ -167,11 +265,14 @@
             }
         }
     }
-    
+
     &__title {
         font-weight: 600;
         font-size: 24px;
         color: white;
+        @include xs{
+            text-align: center;
+        }
     }
 
     &__mota {
@@ -180,48 +281,53 @@
         display: flex;
         align-items: center;
     }
-
 }
 
 .content-957 {
-    margin-top: 150px;
+    margin-top: 100px;
     &__group {
-        
         &-left {
-            &-title{
+            &-title {
                 color: var(--color-main);
                 font-size: 24px;
                 font-weight: 600;
+                @include xs{
+                    text-align: center;
+                }
             }
-            &-content{
+            &-content {
                 margin-top: 20px;
-                &-description{
+                
+                &-description {
                     display: flex;
                     align-items: center;
                     margin-top: 5px;
+                    @include xs{
+                        
+                    }
                 }
             }
         }
         &-right {
-            img{
+            img {
                 width: 100%;
             }
         }
     }
 }
 
-.khoahoc-home{
-    margin-top: 150px;
-    &__title{
+.khoahoc-home {
+    margin-top: 100px;
+    &__title {
         font-size: 24px;
         font-weight: 600;
         color: var(--color-main);
     }
 }
 
-.blog-home{
+.blog-home {
     margin-top: 150px;
-    &__title{
+    &__title {
         font-size: 24px;
         font-weight: 600;
         color: var(--color-main);

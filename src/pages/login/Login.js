@@ -3,8 +3,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
+
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -126,7 +125,7 @@ export default function SignIn() {
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
+                  <Link to="/quen-mat-khau" variant="body2">
                     Quên mật khẩu?
                   </Link>
                 </Grid>
@@ -141,7 +140,7 @@ export default function SignIn() {
         </Container>
       </ThemeProvider>
 
-      <AlertCustom open={open} setOpen={setOpen} />
+      <AlertCustom open={open} setOpen={setOpen} err ={"Email không hợp lệ"} />
 
       {isLogout && <AlertSuccess mess={mess} isLogout = {isLogout} />}
 

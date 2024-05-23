@@ -12,6 +12,8 @@ import StickyCardContent from "../sticky-card-content/StickyCardContent";
 import ReactPlayer from "react-player";
 import "../../scss/showVideo.scss";
 import Course_Answer from "../course-answer-guest/CourseAnswer";
+import ModalVideo from "../modal-show-video/ModalVideo";
+
 
 function CourseDetailsPage({ courseDetails }) {
   const [fetched, setAsFetched] = useState(true);
@@ -58,7 +60,7 @@ function CourseDetailsPage({ courseDetails }) {
 
           {!isShowVideo && (
             <div className="right-content col-md-4 d-none d-md-block absolute right-0">
-              <Sticky innerZ={5} top={70}>
+              <Sticky innerZ={5} top={70} >
                 <StickyCardContent
                   setLink={setLink}
                   setShowVideo={setShowVideo}
@@ -109,7 +111,7 @@ function CourseDetailsPage({ courseDetails }) {
 
       <div className="mb-5"></div>
 
-      {isShowVideo && (
+      {/* {isShowVideo && (
         <div className="show-video">
           <div className="blur-video"></div>
 
@@ -118,10 +120,13 @@ function CourseDetailsPage({ courseDetails }) {
               className="react-player"
               url="https://www.youtube.com/watch?v=txHyinPy-UU"
               controls={true}
+              width={"100%"}
             />
           </div>
         </div>
-      )}
+      )} */}
+      <ModalVideo open={isShowVideo} setOpen={setShowVideo}/>
+
     </main>
   ) : (
     <LoadingSpinner />

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./NavBar.scss";
 import SearchBar from "../search-bar/SearchBar";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../asset/logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import Avatar from "@mui/material/Avatar";
@@ -13,6 +13,7 @@ function NavBar() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isAuthenticated = useSelector((state) => state.account.isAuthenticated);
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
@@ -42,19 +43,32 @@ function NavBar() {
               </div>
               <nav className="hidden lg:flex space-x-4">
                 <div
-                  className="cursor-pointer text-black-100 font-medium hover:text-blue-500 px-3 py-2 "
+                  // className="cursor-pointer text-black-100 font-medium hover:text-blue-500 px-3 py-2 "
+                  className={
+                    location.pathname.startsWith("/khoa-hoc") === true
+                      ? "cursor-pointer text-blue-600 font-medium hover:text-blue-500 px-3 py-2"
+                      : "cursor-pointer text-black-100 font-medium hover:text-blue-500 px-3 py-2"
+                  }
                   onClick={() => navigate("/khoa-hoc")}
                 >
                   Khóa học
                 </div>
                 <div
-                  className="cursor-pointer text-black-100 font-medium hover:text-blue-500 px-3 py-2"
+                  className={
+                    location.pathname.startsWith("/blog") === true
+                      ? "cursor-pointer text-blue-600 font-medium hover:text-blue-500 px-3 py-2"
+                      : "cursor-pointer text-black-100 font-medium hover:text-blue-500 px-3 py-2"
+                  }
                   onClick={() => navigate("/blog")}
                 >
                   Blog
                 </div>
                 <div
-                  className="cursor-pointer text-black-100 font-medium hover:text-blue-500 px-3 py-2"
+                  className={
+                    location.pathname === "/lien-he"
+                      ? "cursor-pointer text-blue-600 font-medium hover:text-blue-500 px-3 py-2"
+                      : "cursor-pointer text-black-100 font-medium hover:text-blue-500 px-3 py-2"
+                  }
                   onClick={() => navigate("/lien-he")}
                 >
                   Liên hệ

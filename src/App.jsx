@@ -28,6 +28,10 @@ import Info from "./pages/account/Info";
 import Baomat from "./pages/account/Baomat";
 import KhoahocActive from "./pages/account/Khoahoc";
 import Doimatkhau from "./admin/component/doi-mat-khau/Doimatkhau";
+import QuenMatkhau from "./pages/quen-mat-khau/QuenMatkhau";
+import Review from "./pages/thanh-toan/Review";
+import DonHang from "./pages/account/DonHang";
+import ThanhToan from "./pages/thanh-toan/ThanhToan";
 
 
 
@@ -65,12 +69,24 @@ const App = () => {
             element: <Lienhe />,
           },
           {
+            path: "/review",
+            element: <Review />,
+          },
+          {
+            path: "/thanh-toan",
+            element: <ThanhToan />,
+          },
+          {
             path: "account",
             element: <Account />,
             children: [
               {
                 path: "thong-tin",
                 element: <Info />,
+              },
+              {
+                path: "don-hang",
+                element: <DonHang />,
               },
               {
                 path: "bao-mat",
@@ -80,6 +96,7 @@ const App = () => {
                 path: "khoa-hoc",
                 element: <KhoahocActive />,
               },
+              
             ]
           }
         ],
@@ -126,6 +143,11 @@ const App = () => {
         path: "/dang-ky",
         element: <SignUp />,
       },
+      {
+        path: "/quen-mat-khau",
+        element: <QuenMatkhau />,
+      },
+     
       {
         path: "/video/:id",
         element: <WatchVideo />,

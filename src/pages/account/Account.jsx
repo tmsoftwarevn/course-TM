@@ -28,7 +28,7 @@ const Account = () => {
   }, [location.pathname]);
 
   return (
-    <div className="acccount mb-5 overflow-hidden">
+    <div className="acccount pb-5 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="banner-account mt-3">
           <img src={profile}></img>
@@ -43,7 +43,7 @@ const Account = () => {
           </div>
         </div>
 
-        <div className="content">
+        <div className="content pb-2">
           <div className="row">
             <div className="col-md-3">
               <div className="content__left">
@@ -74,7 +74,16 @@ const Account = () => {
                   >
                     Thông tin
                   </p>
-
+                  <p
+                    className={
+                      active === "/account/don-hang"
+                        ? "cursor-pointer text-blue-600 bg-slate-300 pl-2 rounded mt-1"
+                        : "cursor-pointer hover:text-blue-600 hover:bg-slate-300 pl-2 rounded mt-1"
+                    }
+                    onClick={() => navigate("/account/don-hang")}
+                  >
+                    Đơn hàng
+                  </p>
                   <p
                     className={
                       active === "/account/bao-mat"

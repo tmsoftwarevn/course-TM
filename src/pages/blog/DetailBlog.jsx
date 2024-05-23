@@ -13,7 +13,7 @@ const DetailBlog = () => {
               <ol className="breadcrumb breadcrumb-ov">
                 <li className="breadcrumb-item">
                   <span
-                    className="br-home"
+                    className="br-home cursor-pointer"
                     onClick={() => {
                       navigate("/");
                     }}
@@ -23,7 +23,7 @@ const DetailBlog = () => {
                 </li>
                 <li className="breadcrumb-item">
                   <span
-                    className="br-home"
+                    className="br-home cursor-pointer"
                     onClick={() => {
                       navigate("/blog");
                     }}

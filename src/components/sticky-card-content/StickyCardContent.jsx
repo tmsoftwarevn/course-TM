@@ -3,6 +3,7 @@ import "./StickyCardContent.scss";
 import ThisCourseIncludes from "../this-course-includes/ThisCourseIncludes";
 import { useEffect } from "react";
 import img_test from "../../asset/thiet ke ui.jpg";
+import { useNavigate } from "react-router-dom";
 
 function StickyCardContent({
   details,
@@ -13,6 +14,7 @@ function StickyCardContent({
   const { image_750x422: image } = details;
 
   const [hidden, toggleHidden] = useState(false);
+  const navigate = useNavigate();
 
   const handleStyles = () => {
     if (window.scrollY > 400) {
@@ -70,7 +72,9 @@ function StickyCardContent({
       <div className="cardBody">
         <span className="price">9.987.654 đ</span>
         <span className="line-through">12.000.000 đ</span>
-        <button className="w-full bg-blue-500 hover:bg-blue-600 p-2.5 sm:p-3 rounded text-white">
+        <button
+        onClick={() => navigate("/review?name=khoa-hoc-marketing")}
+         className="w-full bg-blue-500 hover:bg-blue-600 p-2.5 sm:p-3 rounded text-white">
           MUA KHÓA HỌC
         </button>
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./HomePage.scss";
 import img from "../../asset/7RJ4m1yLRcOZNvyt8bge_banner2.png";
 import img2 from "../../asset/thiet ke ui.jpg";
@@ -15,11 +15,15 @@ import { useNavigate } from "react-router-dom";
 import KhoahocHome from "./KhoahocHome";
 import CarouselKhoahoc from "../../components/carousel-react/CarouselKhoahoc";
 import CarouselBlog from "../../components/carousel-react/CarouselBlog";
+import ModalVideo from "../../components/modal-show-video/ModalVideo";
+
 
 const arr = ["1", "2", "3"];
 const arrBlog = ["1", "2", "3", "4", "5"];
+
 function HomePage() {
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
 
   useEffect(function () {
     Aos.init({ duration: 1000, once: true });
@@ -107,15 +111,21 @@ function HomePage() {
                     <p>Tiện ích hỗ trợ: Quiz, App mobile, SEO…</p>
                   </div>
                 </div>
-                <div class="mt-3 hover:bg-blue-400 cursor-pointer size-fit rounded-full py-2 px-4 bg-blue-600 text-white">
+                {/* <div class="mt-3 hover:bg-blue-400 cursor-pointer size-fit rounded-full py-2 px-4 bg-blue-600 text-white">
                   KHÓA HỌC
-                </div>
+                </div> */}
               </div>
               <div class="col-lg-6 banner__image">
                 <img
-                  src="https://edubit.vn/statics/home_edubit/asset/banner-image.svg"
+                  src={img}
                   alt="Giải Pháp Dạy Học Trực Tuyến Chỉ Cần 5 Phút Thao Tác"
                 />
+                <span className="video-play-button"
+                onClick={() => setOpen(true)}
+                >
+                  <span></span>
+                </span>
+
               </div>
             </div>
           </div>
@@ -184,7 +194,7 @@ function HomePage() {
           </div>
         </section>
 
-        <section className="khoahoc-home mb-5 px-2" data-aos="fade-up">
+        <section className="khoahoc-home px-2" data-aos="fade-up">
           <div className="max-w-6xl mx-auto">
             <div className="khoahoc-home__title text-center mb-3">
               KHÓA HỌC TM
@@ -206,13 +216,13 @@ function HomePage() {
           </div>
         </section>
 
-        <section className="content-654" data-aos="fade-up">
+        <section className="content-654 px-2 mb-5" data-aos="fade-up">
           <div className="max-w-6xl mx-auto">
             <div className="row content-654__group">
               <div className="col-md-6 img-content-654">
                 <img src={khoitao} />
               </div>
-              <div className="col-md-6 content-654__right">
+              <div className="col-md-6 content-654__right py-3">
                 <div className="content-654__title">THAM GIA KHÓA HỌC NGAY</div>
                 <div className="content-654__mota">
                   CÙNG BẠN LAN TỎA TRI THỨC ĐẾN HÀNG TRIỆU NGƯỜI
@@ -263,19 +273,19 @@ function HomePage() {
                   </div>
                 </div>
               </div>
-              <div className="col-md-6 content-834__group-right">
+              <div className="col-md-6 content-834__group-right mt-3">
                 <img className="rounded" src={img_teaching} />
               </div>
             </div>
           </div>
         </section>
 
-        <section className="content-123 " data-aos="fade-up">
+        <section className="content-123 p-2" data-aos="fade-up">
           <div className="row content-123__group">
             <div className="col-md-6 img-content-123">
               <img src={chungchi} />
             </div>
-            <div className="col-md-6 content-123__right">
+            <div className="col-md-6 content-123__right pb-2">
               <div className="content-123__title">KHÓA HỌC TEXT TEXT</div>
               <div className="text-white">
                 Clita diam vero et consetetur ipsum dolor, at amet stet.
@@ -302,43 +312,43 @@ function HomePage() {
 
         <section className="content-957 px-2" data-aos="fade-up">
           <div className="max-w-6xl mx-auto">
-            <div className="row content-834__group">
-              <div className="col-md-6 content-834__group-left">
-                <div className="content-834__group-left-title">
+            <div className="row content-957__group">
+              <div className="col-md-6 content-957__group-left">
+                <div className="content-957__group-left-title ">
                   HỌC TRỰC TUYẾN QUA VIDEO
                 </div>
-                <div className="content-834__group-left-content">
-                  <div className="content-834__group-left-content-description">
+                <div className="content-957__group-left-content">
+                  <div className="content-957__group-left-content-description">
                     <img className="mr-3" src={img_edit} />
                     <span>Không yêu cầu có kiến thức trước</span>
                   </div>
-                  <div className="content-834__group-left-content-description">
+                  <div className="content-957__group-left-content-description">
                     <img className="mr-3" src={img_edit} />
                     <span>Không yêu cầu có kiến thức trước</span>
                   </div>
-                  <div className="content-834__group-left-content-description">
+                  <div className="content-957__group-left-content-description">
                     <img className="mr-3" src={img_edit} />
                     <span>Không yêu cầu có kiến thức trước</span>
                   </div>
-                  <div className="content-834__group-left-content-description">
+                  <div className="content-957__group-left-content-description">
                     <img className="mr-3" src={img_edit} />
                     <span>Giải pháp học trực tuyến</span>
                   </div>
-                  <div className="content-834__group-left-content-description">
+                  <div className="content-957__group-left-content-description">
                     <img className="mr-3" src={img_edit} />
                     <span>Giải pháp học trực tuyến</span>
                   </div>
-                  <div className="content-834__group-left-content-description">
+                  <div className="content-957__group-left-content-description">
                     <img className="mr-3" src={img_edit} />
                     <span>Giải pháp học trực tuyến</span>
                   </div>
-                  <div className="content-834__group-left-content-description">
+                  <div className="content-957__group-left-content-description">
                     <img className="mr-3" src={img_edit} />
                     <span>Giải pháp học trực tuyến</span>
                   </div>
                 </div>
               </div>
-              <div className="col-md-6 content-834__group-right">
+              <div className="col-md-6 content-957__group-right mt-4">
                 <img className="rounded" src={ttt} />
               </div>
             </div>
@@ -352,6 +362,8 @@ function HomePage() {
           </div>
         </section>
       </div>
+      
+      <ModalVideo open={open} setOpen = {setOpen} />
     </>
   );
 }
